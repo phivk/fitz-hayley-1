@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white shadow-3 mw6 pa3">
-    <h1 class="f2 ma0 mb3">{{ title }}</h1>
-    <p class="ma0">{{ content }}</p>
-    <a :href="link" class="dib bg-green white f4 pa2 mt3 no-underline"
+    <h1 class="serif f2 ma0 mb3">{{ title }}</h1>
+    <p class="sans-serif ma0">{{ content }}</p>
+    <a :href="link" class="serif dib bg-green white f4 pa2 mt3 no-underline"
       ><icon class="mr2" />{{ buttonText }}</a
     >
   </div>
@@ -26,6 +26,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.serif {
+  font-family: "Libre Baskerville", serif;
+}
+.sans-serif {
+  font-family: "Open Sans", sans-serif;
+}
 .dib {
   display: inline-block;
 }
