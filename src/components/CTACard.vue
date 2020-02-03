@@ -2,7 +2,7 @@
   <div class="bg-white shadow-3 mw6 pa3">
     <h1 class="serif f2 ma0 mb3">{{ title }}</h1>
     <p class="sans-serif ma0">{{ content }}</p>
-    <a :href="link" class="serif dib bg-green white f4 pa2 mt3 no-underline"
+    <a :href="link" class="serif dib bg-green white f4 fw7 pa2 mt3 no-underline"
       ><icon class="mr2" />{{ buttonText }}</a
     >
   </div>
@@ -61,6 +61,9 @@ export default {
 }
 .f4 {
   font-size: 1.25rem;
+}
+.fw7 {
+  font-weight: 700;
 }
 .bg-white {
   background-color: white;
