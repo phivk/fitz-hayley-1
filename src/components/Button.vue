@@ -1,18 +1,36 @@
 <template>
-  <a :href="link" class="serif dib bg-green creme f4 fw7 pa2 mt3 no-underline"
-    >{{ buttonText }}<icon class="ml2"
-  /></a>
+  <div class="dib">
+    <a
+      :href="link"
+      :class="[
+        square ? 'button--square' : '',
+        'serif flex justify-center items-center bg-green creme f4 fw7 pa2 mt3 no-underline button'
+      ]"
+      ><slot
+    /></a>
+  </div>
 </template>
 
 <script>
+import "../css/global-styles.scss";
 import Icon from "./Icon";
-
 export default {
-  name: "Button",
+  name: "PaginationButton",
   props: {
-    buttonText: { type: String, default: "Explore" },
-    link: { type: String, default: "#" }
+    square: { type: Boolean, default: false },
+    link: { type: String, default: "#" },
+    onClick: { type: Function }
   },
-  components: { icon: Icon }
+  componenents: { Icon }
 };
 </script>
+
+<style scoped>
+.button {
+  height: 36px;
+}
+
+.button--square {
+  width: 36px;
+}
+</style>
