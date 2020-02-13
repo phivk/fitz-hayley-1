@@ -1,9 +1,10 @@
 <template>
   <div class="dib">
     <div
-      class="bg-berry br-100 w2 h2 flex white justify-center items-center sans-serif"
+      class="bg-berry br-100 flex white justify-center items-center sans-serif number-bullet"
     >
-      <span>{{ number || ''}}</span>
+      <span>{{ number || "" }}</span>
+      <Icon />
     </div>
   </div>
 </template>
@@ -15,3 +16,10 @@ export default {
   props: { number: { type: Number } }
 };
 </script>
+
+<style scoped>
+.number-bullet {
+  width: 36px;
+  height: 36px;
+}
+</style>
