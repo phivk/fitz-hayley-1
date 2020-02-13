@@ -1,10 +1,23 @@
 <template>
-  <div class="bg-white mw6 pa3 tc sans-serif">
-    <AvatarItem type="Person" backgroundId="hayley" class="center" />
-    <h2 class="serif f2 mt4 mb3">{{ title }}</h2>
-    <div><NumberBullet :number="numberLetters + ''" class="mr2" />letters</div>
+  <div class="bg-white mw6 pa3 tc sans-serif correspondence-card">
+    <div class="center flex flex-row-reverse justify-center">
+      <AvatarItem
+        v-for="avatar in avatars"
+        :key="avatar"
+        type="Person"
+        :backgroundId="avatar"
+        class="mb4 w4 correspondence-card__avatar-item"
+      />
+    </div>
+
+    <h2 v-for="name in names" :key="name" class="serif f2">
+      {{ name }}
+    </h2>
+    <div class="mt3">
+      <NumberBullet :number="numberLetters + ''" class="mr2" />letters
+    </div>
     <p class="sans-serif mt3">{{ curatorialStatement }}</p>
-    <Button buttonText="Explore" />
+    <Button class="mt4" buttonText="Explore" />
   </div>
 </template>
 
@@ -17,10 +30,17 @@ import AvatarItem from "./AvatarItem";
 export default {
   name: "CorrespondenceCard",
   props: {
-    title: String,
+    names: { type: Array, default: () => [] },
+    backgroundIds: { type: Array, default: () => [] },
     numberLetters: Number,
     curatorialStatement: { type: String, default: "" },
     link: { type: String, default: "#" }
+  },
+  computed: {
+    avatars: function() {
+      /* Need to reverse the order here because avatars will appear in a reversed flex direction for layering reasons */
+      return this.backgroundIds.slice().reverse();
+    }
   },
   components: {
     Button,
@@ -29,3 +49,9 @@ export default {
   }
 };
 </script>
+
+<style>
+.correspondence-card__avatar-item:not(:last-of-type) {
+  margin-left: -50px;
+}
+</style>

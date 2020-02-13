@@ -9,7 +9,10 @@ import Icon from "./Icon";
 
 export default {
   name: "Button",
-  props: { buttonText: { type: String, default: "Explore" } },
+  props: {
+    buttonText: { type: String, default: "Explore" },
+    link: { type: String, default: "#" }
+  },
   components: { icon: Icon }
 };
 </script>

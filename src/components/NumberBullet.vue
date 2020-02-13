@@ -12,6 +12,6 @@
 import "../css/global-styles.scss";
 export default {
   name: "NumberBullet",
-  props: { number: { type: String } }
+  props: { number: { type: String, default: "" } }
 };
 </script>

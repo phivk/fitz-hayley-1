@@ -2,7 +2,7 @@
   <div
     :class="[
       isRound ? 'br-100' : '',
-      'w-100 bg-ink avatar-item ',
+      'bg-ink avatar-item ',
       bgClass(backgroundId)
     ]"
   ></div>
@@ -38,5 +38,13 @@ export default {
 
 .bg-hayley {
   background-image: url("../images/hayley.jpg");
+}
+
+.bg-flaxman {
+  background-image: url("../images/flaxman.jpg");
+}
+
+.bg-blake {
+  background-image: url("../images/blake.jpg");
 }
 </style>
