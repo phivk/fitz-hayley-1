@@ -4,3 +4,42 @@
 .sans-serif {
   font-family: "Open Sans", sans-serif;
 }
+
+$colors: (
+  "creme": #fff9eb,
+  "green": #00470e,
+  "berry": #7b2542,
+  "ink": #2b2b2e,
+  "light-green": #cdeed4,
+  "light-berry": #eecdd8,
+  "white": #fff
+);
+
+/* Generate atomic classes based on custom colors, 
+   Credits to James Chambers https://jameschambers.co/writing/tachyons-custom-colours/ 
+*/
+@each $name, $hex in $colors {
+  .#{$name} {
+    color: $hex;
+    &:visited {
+      color: $hex;
+    }
+  }
+  .bg-#{$name} {
+    background-color: $hex;
+  }
+  .b--#{$name} {
+    border-color: $hex;
+  }
+  .hover-bg-#{$name} {
+    &:focus,
+    &:active,
+    &:hover {
+      background-color: $hex;
+    }
+  }
+  .hover-#{$name}:hover,
+  .hover-#{$name}:visited:hover {
+    color: $hex;
+  }
+}
