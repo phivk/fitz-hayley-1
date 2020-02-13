@@ -10,7 +10,7 @@
 
 <script>
 import Icon from "./Icon";
-import "../css/global-styles.css";
+import "../css/global-styles.scss";
 export default {
   name: "CTACard",
   props: {
