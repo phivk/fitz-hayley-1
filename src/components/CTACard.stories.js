@@ -1,4 +1,4 @@
-import CTACard from "./CTACard";
+import CTACard from "./CTACard.vue";
 
 export default { title: "CTACard" };
 

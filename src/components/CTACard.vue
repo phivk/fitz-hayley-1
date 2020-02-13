@@ -2,7 +2,7 @@
   <div class="bg-white shadow-3 mw6 pa3">
     <h1 class="serif f2 ma0 mb3">{{ title }}</h1>
     <p class="sans-serif ma0">{{ content }}</p>
-    <a :href="link" class="serif dib bg-green white f4 fw7 pa2 mt3 no-underline"
+    <a :href="link" class="serif dib bg-green creme f4 fw7 pa2 mt3 no-underline"
       ><icon class="mr2" />{{ buttonText }}</a
     >
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import Icon from "./Icon";
-import "../css/global-styles.scss";
+
 export default {
   name: "CTACard",
   props: {
