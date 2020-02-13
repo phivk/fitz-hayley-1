@@ -10,6 +10,7 @@
 
 <script>
 import Icon from "./Icon";
+import "../css/global-styles.css";
 export default {
   name: "CTACard",
   props: {
@@ -25,59 +26,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.serif {
-  font-family: "Libre Baskerville", serif;
-}
-.sans-serif {
-  font-family: "Open Sans", sans-serif;
-}
-.dib {
-  display: inline-block;
-}
-.mw6 {
-  max-width: 32rem;
-}
-.pa2 {
-  padding: 0.5rem;
-}
-.pa3 {
-  padding: 1rem;
-}
-.ma0 {
-  margin: 0;
-}
-.mb3 {
-  margin-bottom: 1rem;
-}
-.mt3 {
-  margin-top: 1rem;
-}
-.mr2 {
-  margin-right: 0.5rem;
-}
-.f2 {
-  font-size: 2.25rem;
-}
-.f4 {
-  font-size: 1.25rem;
-}
-.fw7 {
-  font-weight: 700;
-}
-.bg-white {
-  background-color: white;
-}
-.bg-green {
-  background-color: green;
-}
-.white {
-  color: white;
-}
-.shadow-3 {
-  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-}
-.no-underline {
-  text-decoration: none;
-}
-</style>
+<style scoped></style>
