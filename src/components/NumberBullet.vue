@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import "../css/global-styles.scss";
 export default {
   name: "NumberBullet",
   props: { number: { type: Number } }

@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import "../css/global-styles.scss";
 export default {
   name: "TheHeader",
   props: {

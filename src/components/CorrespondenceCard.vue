@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import "../css/global-styles.scss";
 import Button from "./Button";
 import NumberBullet from "./NumberBullet";
 import AvatarItem from "./AvatarItem";

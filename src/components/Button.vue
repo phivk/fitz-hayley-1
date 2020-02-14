@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import "../css/global-styles.scss";
 export default {
   name: "PaginationButton",
   props: {

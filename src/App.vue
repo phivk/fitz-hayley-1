@@ -11,7 +11,6 @@
 <script>
 import CTACard from "./components/CTACard";
 import "tachyons/css/tachyons.css";
-import "./css/global-styles.scss";
 
 export default {
   components: {
