@@ -3,7 +3,7 @@
     <div
       :class="[
         square ? 'button--square' : '',
-        'serif flex justify-center items-center bg-green creme f4 fw7 pa2 mt3 button dim'
+        'serif flex justify-center items-center bg-green creme f4 fw7 pa2 button dim'
       ]"
     >
       <slot />

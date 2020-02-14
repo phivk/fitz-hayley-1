@@ -2,9 +2,11 @@
   <div
     :class="[
       isRound ? 'br-100' : '',
+      small ? 'avatar-item--small' : '',
       'bg-ink avatar-item ',
-      bgClass(backgroundId)
+      bgClasses
     ]"
+    :style="{ backgroundImage: backgroundProp }"
   ></div>
 </template>
 
@@ -13,16 +15,24 @@ export default {
   name: "AvatarItem",
   props: {
     type: { type: String, default: "Other" },
-    backgroundId: { type: String }
+    small: { type: Boolean, default: false },
+    backgroundId: { type: String },
+    bgImageSrc: { type: String }
   },
   computed: {
     isRound: function() {
       return this.type === "Person";
-    }
-  },
-  methods: {
-    bgClass: function(backgroundId) {
-      return "bg-" + backgroundId;
+    },
+    backgroundProp: function() {
+      return this.bgImageSrc ? "url('" + this.bgImageSrc + "')" : undefined;
+    },
+    bgClasses: function() {
+      const prefix = "avatar-item__";
+      const backgroundIdClass = this.backgroundId
+        ? prefix + "bg-" + this.backgroundId
+        : "";
+      const backgroundTypeClass = prefix + "bg-" + this.type.toLowerCase();
+      return backgroundIdClass + "" + backgroundTypeClass;
     }
   }
 };
@@ -36,15 +46,28 @@ export default {
   background-position: center center;
 }
 
-.bg-hayley {
+.avatar-item--small {
+  width: 64px;
+  height: 64px;
+}
+
+.avatar-item__bg-person {
+  background-image: url("../images/avatar-placeholder-person.png");
+}
+
+.avatar-item__bg-place {
+  background-image: url("../images/avatar-placeholder-place.png");
+}
+
+.avatar-item__bg-hayley {
   background-image: url("../images/hayley.jpg");
 }
 
-.bg-flaxman {
+.avatar-item__bg-flaxman {
   background-image: url("../images/flaxman.jpg");
 }
 
-.bg-blake {
+.avatar-item__bg-blake {
   background-image: url("../images/blake.jpg");
 }
 </style>
