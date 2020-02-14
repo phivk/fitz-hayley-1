@@ -3,15 +3,23 @@
     <div class="w-100 flex justify-center ">
       <div class="mr2 letter-viewer__side">
         <div class="letter-viewer__manuscript-container">
-          <div class="letter-viewer__manuscript-container__inner"></div>
+          <div
+            class="letter-viewer__manuscript-container__inner"
+            :style="{
+              backgroundImage: getBackgroundProp(
+                manuscriptPageImages[currentIndex]
+              )
+            }"
+          ></div>
         </div>
       </div>
       <div
         class="ml2  bg-white f-copy letter-viewer__side letter-viewer__transcript-container"
       >
-        <div class="pa4 letter-viewer__transcript-container__inner">
-          {{ transcriptPageTexts[currentIndex] }}
-        </div>
+        <div
+          class="pa4 letter-viewer__transcript-container__inner"
+          v-html="transcriptPageTexts[currentIndex]"
+        ></div>
       </div>
     </div>
     <div class="flex justify-center mt4">
@@ -54,6 +62,9 @@ export default {
     }
   },
   methods: {
+    getBackgroundProp(srcPath) {
+      return "url('" + srcPath + "')";
+    },
     handleClickBackward: function() {
       if (this.currentIndex === 0) {
         return;
@@ -86,7 +97,6 @@ export default {
   width: 100%;
   padding-bottom: 120%; /* Aspect ratio of image scans */
   background-color: black;
-  background-image: url("../images/letter-page.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: auto;
