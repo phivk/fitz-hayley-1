@@ -17,7 +17,9 @@
       <NumberBullet :number="numberLetters + ''" class="mr2" />letters
     </div>
     <p class="sans-serif mt3">{{ curatorialStatement }}</p>
-    <Button class="mt4">Explore 🖛</Button>
+    <Button class="mt4"
+      >Explore <span class="db sans-serif ml2">☞</span></Button
+    >
   </div>
 </template>
 

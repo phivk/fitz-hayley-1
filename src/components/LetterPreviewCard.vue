@@ -16,7 +16,11 @@
         ><NumberBullet :number="entityCount[entityKey]" />
         <span class="ml2">{{ entityKey }}</span></span
       >
-      <div class="db"><Button :link="link">Read letter 🖛</Button></div>
+      <div class="db">
+        <Button :link="link"
+          >Read letter <span class="db sans-serif ml2">☞</span></Button
+        >
+      </div>
     </div>
 
     <div class="letter-preview-card__right-side">
