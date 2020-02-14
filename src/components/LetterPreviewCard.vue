@@ -61,7 +61,7 @@ export default {
 }
 
 .letter-preview-card__right-side {
-  background-image: url("../images/letter-page.jpg");
+  background-image: url("../images/letter-page-1.jpg");
   /* Cutting away the black border around the letter */
   background-position: -60px -50px;
   background-size: calc(100% + 200px);
