@@ -1,4 +1,6 @@
 import CorrespondenceCard from "./CorrespondenceCard.vue";
+import "../css/reset.css";
+import "../css/global-styles.scss";
 
 export default { title: "CorrespondenceCard" };
 

@@ -1,4 +1,6 @@
 import CTACard from "./CTACard.vue";
+import "../css/reset.css";
+import "../css/global-styles.scss";
 
 export default { title: "CTACard" };
 

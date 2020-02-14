@@ -1,4 +1,6 @@
 import LetterPreviewCard from "./LetterPreviewCard.vue";
+import "../css/reset.css";
+import "../css/global-styles.scss";
 
 export default { title: "LetterPreviewCard" };
 
