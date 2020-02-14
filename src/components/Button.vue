@@ -13,10 +13,10 @@
 
 <script>
 export default {
-  name: "PaginationButton",
+  name: "Button",
   props: {
     square: { type: Boolean, default: false },
-    onClick: { type: Function }
+    onClick: { type: Function, default: () => {} }
   }
 };
 </script>

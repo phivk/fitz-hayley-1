@@ -4,7 +4,6 @@
       class="bg-berry br-100 flex white justify-center items-center sans-serif number-bullet"
     >
       <span>{{ number || "" }}</span>
-      <Icon />
     </div>
   </div>
 </template>
