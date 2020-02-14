@@ -1,12 +1,14 @@
 <template>
   <div class="dib">
-    <a href="#" class="green dib mr3">first</a>
+    <span class="green dib mr3 underline pointer" @click="onClickFirst"
+      >first</span
+    >
     <Button square class="dib mr3" :onClick="onClickBackward">➻</Button>
     <span class="dib mr2">page</span>
     <NumberBullet :number="currentIndex" class="dib mr2" />
     <span class="dib mr3">out of {{ totalPages }}</span>
     <Button square class="dib mr3" :onClick="onClickForward">➻</Button>
-    <a href="#" class="green">last</a>
+    <span class="green dib underline pointer" @click="onClickLast">last</span>
   </div>
 </template>
 
@@ -19,7 +21,9 @@ export default {
     currentIndex: { type: Number },
     totalPages: { type: Number },
     onClickForward: { type: Function },
-    onClickBackward: { type: Function }
+    onClickBackward: { type: Function },
+    onClickFirst: { type: Function },
+    onClickLast: { type: Function }
   },
   components: { NumberBullet, Button }
 };

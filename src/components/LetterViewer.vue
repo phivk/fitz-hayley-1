@@ -28,6 +28,8 @@
         :totalPages="totalPages"
         :onClickForward="handleClickForward"
         :onClickBackward="handleClickBackward"
+        :onClickFirst="handleClickFirst"
+        :onClickLast="handleClickLast"
       />
     </div>
   </div>
@@ -65,17 +67,23 @@ export default {
     getBackgroundProp(srcPath) {
       return "url('" + srcPath + "')";
     },
-    handleClickBackward: function() {
+    handleClickBackward() {
       if (this.currentIndex === 0) {
         return;
       }
       this.currentIndex = this.currentIndex - 1;
     },
-    handleClickForward: function() {
+    handleClickForward() {
       if (this.currentIndex === this.totalPages - 1) {
         return;
       }
       this.currentIndex = this.currentIndex + 1;
+    },
+    handleClickFirst() {
+      this.currentIndex = 0;
+    },
+    handleClickLast() {
+      this.currentIndex = this.totalPages - 1;
     }
   }
 };
