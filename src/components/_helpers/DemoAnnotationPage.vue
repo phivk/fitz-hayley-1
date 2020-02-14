@@ -2,13 +2,12 @@
   <div>
     <p>My dear Eliza</p>
     <p>
-      Your letter has indeed struck me with a
+      Your letter has indeed struck me with a double surprize. > –
       <span class="underline pointer" v-tooltip.top="tooltipContent"
-        >double surprize.</span
+        >of the first</span
       >
-      – of the first I shall not speak at present, because I feel perhaps a
-      little too like the honest old servant, you mention, to relish it on the
-      sudden
+      I shall not speak at present, because I feel perhaps a little too like the
+      honest old servant, you mention, to relish it on the sudden
     </p>
     <p>
       as to your projected Travels to the south, I am, in Truth, surprized &amp;
