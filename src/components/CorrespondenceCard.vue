@@ -2,6 +2,11 @@
   <div class="bg-white mw6 pa3 tc sans-serif correspondence-card">
     <div class="center flex flex-row-reverse justify-center">
       <AvatarItem
+        type="Person"
+        backgroundId="hayley"
+        class="mb4 w4 correspondence-card__avatar-item"
+      />
+      <AvatarItem
         v-for="avatar in avatars"
         :key="avatar"
         type="Person"

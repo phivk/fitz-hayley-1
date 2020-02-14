@@ -11,7 +11,7 @@ export const single = () => ({
   data: function() {
     return {
       names: ["Firstname Lastname"],
-      backgroundIds: ["hayley"],
+      backgroundIds: ["flaxman"],
       numberLetters: "7",
       curatorialStatement:
         "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
@@ -27,8 +27,8 @@ export const multi = () => ({
   },
   data: function() {
     return {
-      names: ["Firstname Lastname", "Firstname Lastname", "Firstname Lastname"],
-      backgroundIds: ["hayley", "flaxman", "blake"],
+      names: ["Firstname Lastname", "Firstname Lastname"],
+      backgroundIds: ["blake", "flaxman"],
       numberLetters: "7",
       curatorialStatement:
         "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
