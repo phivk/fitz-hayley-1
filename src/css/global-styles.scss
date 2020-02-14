@@ -1,10 +1,4 @@
 /******************************** TACHYONS Customization *******************************/
-.serif {
-  font-family: "Libre Baskerville", serif;
-}
-.sans-serif {
-  font-family: "Open Sans", sans-serif;
-}
 
 $colors: (
   "creme": #fff9eb,
@@ -43,4 +37,19 @@ $colors: (
   .hover-#{$name}:visited:hover {
     color: $hex;
   }
+}
+
+.serif {
+  font-family: "Libre Baskerville", serif;
+}
+.sans-serif {
+  font-family: "Open Sans", sans-serif;
+}
+
+.fitz-tooltip {
+  position: relative;
+  max-width: 348px;
+  padding: 1rem;
+  background-color: #cdeed4;
+  font-family: "Open Sans", sans-serif;
 }
