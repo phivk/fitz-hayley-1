@@ -3,10 +3,10 @@
     <div class="letter-preview-card__left-side pa3">
       <h2 class="f3 serif mb3">{{ title }}</h2>
       <p>
-        From <a :href="author.link" class="berry">{{ author.name }}</a>
+        From <a :href="author.link" class="berry dim">{{ author.name }}</a>
       </p>
       <p>
-        To <a :href="recipient.link" class="berry">{{ recipient.name }}</a>
+        To <a :href="recipient.link" class="berry dim">{{ recipient.name }}</a>
       </p>
       <p class="mv3 measure-narrow">{{ curatorialStatement }}</p>
       <span

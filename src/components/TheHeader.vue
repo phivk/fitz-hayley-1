@@ -10,16 +10,16 @@
     <nav :class="[isCollapsed ? 'center' : '', 'f4 sans-serif']">
       <ul :class="[isCollapsed ? '' : 'pb4', 'center list ']">
         <li class="mr4 dib">
-          <a href="/" class="creme link">Home</a>
+          <a href="/" class="creme link dim">Home</a>
         </li>
         <li class="mr4 dib">
-          <a href="/correspondences" class="creme link">Correspondences</a>
+          <a href="/correspondences" class="creme link dim">Correspondences</a>
         </li>
         <li class="mr4 dib">
-          <a href="/entities" class="creme link">Entities</a>
+          <a href="/entities" class="creme link dim">Entities</a>
         </li>
         <li class="dib">
-          <a href="/about" class="creme link">About</a>
+          <a href="/about" class="creme link dim">About</a>
         </li>
       </ul>
     </nav>

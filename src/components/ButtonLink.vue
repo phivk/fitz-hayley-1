@@ -1,6 +1,6 @@
 <template
   ><Button>
-    <a :href="link" :class="['no-underline ']"><slot /></a></Button
+    <a :href="link" :class="['no-underline']"><slot /></a></Button
 ></template>
 
 <script>
