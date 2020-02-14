@@ -16,12 +16,14 @@
       <div
         class="ml2  bg-white f-copy letter-viewer__side letter-viewer__transcript-container"
       >
-        <div
-          class="pa4 letter-viewer__transcript-container__inner"
-          v-html="transcriptPageTexts[currentIndex]"
-        ></div>
+        <div class="pa4 letter-viewer__transcript-container__inner">
+          <component
+            v-bind:is="transcriptPageComponents[currentIndex]"
+          ></component>
+        </div>
       </div>
     </div>
+
     <div class="flex justify-center mt4">
       <Pagination
         :currentIndex="indexForNonNerds"
@@ -36,13 +38,18 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { VTooltip } from "v-tooltip";
 import Pagination from "./Pagination";
+
+Vue.directive("tooltip", VTooltip);
+VTooltip.options.defaultClass = "fitz-tooltip";
 
 export default {
   name: "LetterViewer",
   props: {
     manuscriptPageImages: { type: Array },
-    transcriptPageTexts: { type: Array }
+    transcriptPageComponents: { type: Array }
   },
   components: {
     Pagination
@@ -59,7 +66,7 @@ export default {
     totalPages: function() {
       return Math.max(
         this.manuscriptPageImages.length,
-        this.transcriptPageTexts.length
+        this.transcriptPageComponents.length
       );
     }
   },
