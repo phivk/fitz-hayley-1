@@ -32,7 +32,7 @@ export default {
         ? prefix + "bg-" + this.backgroundId
         : "";
       const backgroundTypeClass = prefix + "bg-" + this.type.toLowerCase();
-      return backgroundIdClass + "" + backgroundTypeClass;
+      return backgroundIdClass + " " + backgroundTypeClass;
     }
   }
 };
@@ -51,6 +51,7 @@ export default {
   height: 64px;
 }
 
+/* background classes for 7 entity types */
 .avatar-item__bg-person {
   background-image: url("../images/avatar-placeholder-person.png");
 }
@@ -59,6 +60,7 @@ export default {
   background-image: url("../images/avatar-placeholder-place.png");
 }
 
+/* Specific people. Classes being generated based on backgroundId prop  */
 .avatar-item__bg-hayley {
   background-image: url("../images/hayley.jpg");
 }

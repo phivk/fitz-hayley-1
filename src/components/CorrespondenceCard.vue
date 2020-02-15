@@ -7,10 +7,10 @@
         class="mb4 w4 correspondence-card__avatar-item"
       />
       <AvatarItem
-        v-for="avatar in avatars"
-        :key="avatar"
+        v-for="backgroundId in backgroundIds"
+        :key="backgroundId"
         type="Person"
-        :backgroundId="avatar"
+        :backgroundId="backgroundId"
         class="mb4 w4 correspondence-card__avatar-item"
       />
     </div>
