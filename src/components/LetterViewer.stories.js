@@ -8,7 +8,7 @@ import letterImage2 from "../images/letter-page-2.jpg";
 import letterImage3 from "../images/letter-page-3.jpg";
 import letterImage4 from "../images/letter-page-4.jpg";
 
-import DemoAnnotationPage from "./_helpers/DemoAnnotationPage";
+import DemoAnnotationPage from "./_mocks/DemoAnnotationPage";
 
 export default { title: "LetterViewer" };
 
