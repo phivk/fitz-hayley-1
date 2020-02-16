@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white shadow-3 mw6 pa3">
-    <h1 class="serif f2 ma0 mb3">{{ title }}</h1>
-    <p class="sans-serif ma0">{{ content }}</p>
+    <h1 class="serif f2 mb3">{{ title }}</h1>
+    <p class="sans-serif mb3">{{ content }}</p>
     <Button>{{ buttonText }}<span class="db sans-serif ml2">☞</span></Button>
   </div>
 </template>
