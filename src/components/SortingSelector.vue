@@ -1,0 +1,40 @@
+<template>
+   <div class="sans-serif relative dib w5 tr">
+      sorted by <span @click="isExpanded = !isExpanded" class="green pointer">{{activeSortOption}} ▾</span>
+      <div class="absolute z-1 right-0 shadow-4 mt1" :class="isExpanded ? 'db' : 'dn'">
+        <span 
+          v-for="(sortOption, index) in sortOptions" :key="sortOption"
+          @click="onOptionClick(index)"
+          class="ph3 pv1 db hover-bg-light-green"
+        >
+          {{sortOption}}
+        </span>
+      </div>
+    </div> 
+</template>
+
+<script>
+export default {
+  name: "SortingSelector",
+  data: function () {
+    return {
+      isExpanded: false,
+      activeIndex: 0,
+    }
+  },
+  props: { 
+    sortOptions: { type: Array },
+  },
+  computed: {
+    activeSortOption () {
+      return this.sortOptions[this.activeIndex]
+    }
+  },
+  methods: {
+    onOptionClick (index) {
+      this.activeIndex = index
+      this.isExpanded = false
+    },
+  }
+};
+</script>
