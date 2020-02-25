@@ -1,6 +1,6 @@
 <template>
   <div >
-    <a href="#0" @click.prevent="isExpanded = !isExpanded">{{isExpanded ? hideText : showText}}</a>
+    <a class="db mb2" href="#0" @click.prevent="isExpanded = !isExpanded">{{isExpanded ? hideText : showText}}</a>
     <slot v-if="isExpanded"></slot>
   </div>
 </template>

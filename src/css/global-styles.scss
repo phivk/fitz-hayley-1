@@ -53,3 +53,7 @@ $colors: (
   background-color: #cdeed4;
   font-family: "Open Sans", sans-serif;
 }
+
+a {
+  color: map-get($colors, 'green');
+}
