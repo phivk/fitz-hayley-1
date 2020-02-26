@@ -8,11 +8,10 @@ export const regular = () => ({
   components: { LetterPreviewCard },
   data: function() {
     return {
-      title: "Letter Title A",
+      title: "William Hayley to Anna Seward: letter",
+      date: "1782-06-11",
       author: { name: "Firstname Lastname", link: "#" },
       recipient: { name: "Firstname Lastname", link: "#" },
-      curatorialStatement:
-        "A brief curatorial statement, describing the letter, why it was send and what are the most interesting points",
       entityCount: {
         people: 5,
         places: 3,
@@ -22,18 +21,26 @@ export const regular = () => ({
     };
   },
   template:
-    "<LetterPreviewCard :title='title' :author='author' :recipient='recipient' :curatorialStatement='curatorialStatement' :entityCount='entityCount' :link='link'/>"
+    `
+    <LetterPreviewCard 
+      :title='title' 
+      :date='date'
+      :author='author' 
+      :recipient='recipient' 
+      :entityCount='entityCount' 
+      :link='link'
+    />
+    `
 });
 
 export const withManyEntityTypes = () => ({
   components: { LetterPreviewCard },
   data: function() {
     return {
-      title: "Letter Title A",
+      title: "William Hayley to Anna Seward: letter",
+      date: "1782-06-11",
       author: { name: "Firstname Lastname", link: "#" },
       recipient: { name: "Firstname Lastname", link: "#" },
-      curatorialStatement:
-        "A brief curatorial statement, describing the letter, why it was send and what are the most interesting points",
       entityCount: {
         people: 2,
         places: 2,
@@ -45,5 +52,40 @@ export const withManyEntityTypes = () => ({
     };
   },
   template:
-    "<LetterPreviewCard :title='title' :author='author' :recipient='recipient' :curatorialStatement='curatorialStatement' :entityCount='entityCount' :link='link'/>"
+    `
+    <LetterPreviewCard 
+      :title='title' 
+      :date='date'
+      :author='author' 
+      :recipient='recipient' 
+      :entityCount='entityCount' 
+      :link='link'
+    />
+    `
+});
+
+
+export const withNoEntityTypes = () => ({
+  components: { LetterPreviewCard },
+  data: function() {
+    return {
+      title: "William Hayley to Anna Seward: letter",
+      date: "1782-06-11",
+      author: { name: "Firstname Lastname", link: "#" },
+      recipient: { name: "Firstname Lastname", link: "#" },
+      entityCount: {},
+      link: "#"
+    };
+  },
+  template:
+    `
+    <LetterPreviewCard 
+      :title='title' 
+      :date='date'
+      :author='author' 
+      :recipient='recipient' 
+      :entityCount='entityCount' 
+      :link='link'
+    />
+    `
 });
