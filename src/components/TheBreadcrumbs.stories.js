@@ -4,7 +4,7 @@ import "../css/global-styles.scss";
 
 export default { title: "TheBreadcrumbs" };
 
-export const withPathList = () => ({
+export const fromPathList = () => ({
   components: { TheBreadcrumbs },
   data: function() {
     return {
@@ -34,7 +34,7 @@ export const withPathList = () => ({
     `
 });
 
-export const withoutPathList = () => ({
+export const fromWindowLocation = () => ({
   components: { TheBreadcrumbs },
   data: function() {
     return {}
