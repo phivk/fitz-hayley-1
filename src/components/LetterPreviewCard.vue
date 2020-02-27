@@ -3,7 +3,7 @@
     <div class="letter-preview-card__left-side pa3">
       <h2 class="f3 serif mb2">{{ title }}</h2>
       <h3 class="f4 mb2">{{date}}</h3>
-      <div class="mb2">
+      <div class="mb3">
         <p v-if="author">
           From <a :href="author.link" class="berry dim">{{ author.name }}</a>
         </p>
