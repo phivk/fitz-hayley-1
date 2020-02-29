@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white w-100 sans-serif f5  flex letter-preview-card">
+  <div class="letter-preview-card bg-white w-100 sans-serif f5 flex shadow-4">
     <div class="letter-preview-card__left-side pa3">
       <h2 class="f3 serif mb2">{{ title }}</h2>
       <h3 class="f4 mb2">{{date}}</h3>

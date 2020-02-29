@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white mw6 pa3 tc sans-serif correspondence-card">
+  <div class="correspondence-card bg-white mw6 pa3 tc sans-serif shadow-4">
     <div class="center flex flex-row-reverse justify-center">
       <AvatarItem
         type="Person"
