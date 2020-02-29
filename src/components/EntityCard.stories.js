@@ -17,13 +17,24 @@ export const person = () => ({
     };
   },
   template:
-    '<entity-card type="Person" title="Firstname Lastname" curatorialStatement="A one line statement summarizing who is the entity Firstname Lastname" :bgImageSrc="bgImage"/>'
+    `
+    <entity-card 
+      type="Person" 
+      title="Firstname Lastname" 
+      :bgImageSrc="bgImage"
+    />
+    `
 });
 
 export const personWithNoImage = () => ({
   components: { "entity-card": EntityCard },
   template:
-    '<entity-card type="Person" title="Firstname Lastname" curatorialStatement="A one line statement summarizing who is the entity Firstname Lastname"/>'
+    `
+    <entity-card 
+      type="Person" 
+      title="Firstname Lastname" 
+    />
+    `
 });
 
 export const place = () => ({
@@ -34,11 +45,22 @@ export const place = () => ({
     };
   },
   template:
-    '<entity-card type="Place" title="Location Name" curatorialStatement="A one line statement summarizing what & where is the entity Location Name" :bgImageSrc="bgImage"/>'
+    `
+    <entity-card 
+      type="Place" 
+      title="Location Name" 
+      :bgImageSrc="bgImage"
+    />
+    `
 });
 
 export const placeWithNoImage = () => ({
   components: { "entity-card": EntityCard },
   template:
-    '<entity-card type="Place" title="Location Name" curatorialStatement="A one line statement summarizing what & where is the entity Location Name"/>'
+    `
+    <entity-card 
+      type="Place" 
+      title="Location Name" 
+    />
+    `
 });
