@@ -3,7 +3,7 @@
     <span class="green dib mr3 underline pointer" @click="onClickFirst"
       >first</span
     >
-    <Button square class="dib mr3" :onClick="onClickBackward">➻</Button>
+    <Button square class="dib mr3" :onClick="onClickBackward"><span class="flip-h">➺</span></Button>
     <span class="dib mr2">page</span>
     <NumberBullet :number="currentIndex" class="dib mr2" />
     <span class="dib mr3">out of {{ totalPages }}</span>
@@ -28,3 +28,9 @@ export default {
   components: { NumberBullet, Button }
 };
 </script>
+
+<style>
+.flip-h {
+  transform: scale(-1, 1);
+}
+</style>
