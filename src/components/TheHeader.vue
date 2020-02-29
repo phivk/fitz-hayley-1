@@ -1,36 +1,30 @@
 <template>
-  <header
-    :class="[isCollapsed ? 'pa4 flex' : '', 'w-100 fixed tc bg-green creme']"
-  >
-    <div :class="[isCollapsed ? 'pa0 absolute' : 'pa5']">
-      <span :class="[isCollapsed ? 'f3' : 'f1', 'serif']"
-        >Most Sacred Things</span
+  <nav 
+    :class="wide ? 'pv5' : 'dt-l ph5-l'"
+    class="db w-100 border-box pa3  bg-green creme">
+      <h1 
+        :class="wide ? 'mb4 f2-m f1-l' : 'dtc-l w-40-l tl-l mb0-l f2-ns'"
+        class="db v-mid link w-100 tc mb2 serif f3"
       >
-    </div>
-    <nav :class="[isCollapsed ? 'center' : '', 'f4 sans-serif']">
-      <ul :class="[isCollapsed ? '' : 'pb4', 'center list ']">
-        <li class="mr4 dib">
-          <a href="/" class="creme link dim">Home</a>
-        </li>
-        <li class="mr4 dib">
-          <a href="/correspondences" class="creme link dim">Correspondences</a>
-        </li>
-        <li class="mr4 dib">
-          <a href="/entities" class="creme link dim">Entities</a>
-        </li>
-        <li class="dib">
-          <a href="/about" class="creme link dim">About</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+        Most Sacred Things
+      </h1>
+      <div 
+        :class="wide ? '' : 'dtc-l w-60-l tr-l'"
+        class="db v-mid w-100 tc sans-serif"
+      >
+        <a class="link dim creme f6 f5-ns dib mr3 mr4-l" href="/" title="Home">Home</a>
+        <a class="link dim creme f6 f5-ns dib mr3 mr4-l" href="/correspondences" title="Correspondences">Correspondences</a>
+        <a class="link dim creme f6 f5-ns dib mr3 mr4-l" href="/entities" title="Entities">Entities</a>
+        <a class="link dim creme f6 f5-ns dib" href="/about" title="About">About</a>
+      </div>
+  </nav>
 </template>
 
 <script>
 export default {
   name: "TheHeader",
   props: {
-    isCollapsed: { type: Boolean, default: false }
+    wide: { type: Boolean, default: false }
   }
 };
 </script>

@@ -4,12 +4,12 @@ import "../css/global-styles.scss";
 
 export default { title: "Header" };
 
-export const expanded = () => ({
+export const regular = () => ({
   components: { "the-header": TheHeader },
   template: "<the-header/>"
 });
 
-export const collapsed = () => ({
+export const wide = () => ({
   components: { "the-header": TheHeader },
-  template: "<the-header isCollapsed/>"
+  template: "<the-header wide/>"
 });
