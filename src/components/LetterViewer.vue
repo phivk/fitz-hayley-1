@@ -34,12 +34,18 @@
       >
         <div class="pa4 letter-viewer__transcript-container__inner">
           <component
+            v-if="transcriptPageComponents"
             v-bind:is="transcriptPageComponents[currentIndex]"
           ></component>
+          <div 
+            v-else-if="transcriptComponent" 
+            v-bind:is="transcriptComponent"
+          ></div>
+          <div v-else>No transcript available</div>
         </div>
       </div>
     </div>
-    <div v-if="$mq === 'l'" class="flex justify-center mt4">
+    <div v-if="transcriptPageComponents || $mq === 'l'" class="flex justify-center mt4">
       <Pagination
         :currentIndex="indexForNonNerds"
         :totalPages="totalPages"
@@ -75,7 +81,8 @@ export default {
   name: "LetterViewer",
   props: {
     manuscriptPageImages: { type: Array },
-    transcriptPageComponents: { type: Array }
+    transcriptPageComponents: { type: Array },
+    transcriptComponent: { type: String },
   },
   components: {
     Pagination,
@@ -99,7 +106,9 @@ export default {
     totalPages: function() {
       return Math.max(
         this.manuscriptPageImages.length,
-        this.transcriptPageComponents.length
+        this.transcriptPageComponents 
+          ? this.transcriptPageComponents.length
+          : 0
       );
     }
   },

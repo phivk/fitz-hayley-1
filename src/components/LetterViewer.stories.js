@@ -8,9 +8,17 @@ import letterImage2 from "../images/letter-page-2.jpg";
 import letterImage3 from "../images/letter-page-3.jpg";
 import letterImage4 from "../images/letter-page-4.jpg";
 
+import DemoLetterTranscript from "./_mocks/DemoLetterTranscript";
 import DemoAnnotationPage from "./_mocks/DemoAnnotationPage";
 
 export default { title: "LetterViewer" };
+
+Vue.component("LetterTranscriptFull", {
+  components: {
+    DemoLetterTranscript
+  },
+  template: "<DemoLetterTranscript/>"
+});
 
 Vue.component("TranscriptPage1", {
   components: {
@@ -41,7 +49,7 @@ Vue.component("TranscriptPage4", {
   <p>Eartham<br />Sunday<br />May 6 1792</p></div>`
 });
 
-export const regular = () => ({
+export const paginatedTranscript = () => ({
   components: { LetterViewer, DemoAnnotationPage },
   data: function() {
     return {
@@ -61,4 +69,21 @@ export const regular = () => ({
   },
   template:
     "<LetterViewer :manuscriptPageImages=manuscriptPageImages :transcriptPageComponents='transcriptPageComponents'></LetterViewer>"
+});
+
+export const fullTranscript = () => ({
+  components: { LetterViewer },
+  data: function() {
+    return {
+      manuscriptPageImages: [
+        letterImage1,
+        letterImage2,
+        letterImage3,
+        letterImage4
+      ],
+      transcriptComponent: "LetterTranscriptFull",
+    };
+  },
+  template:
+    "<LetterViewer :manuscriptPageImages=manuscriptPageImages :transcriptComponent='transcriptComponent'></LetterViewer>"
 });
