@@ -196,64 +196,6 @@ export default {
   overflow: auto;
 }
 
-/*.Agile Carousel */
-
-.agile__actions {
-  justify-content: center;
-}
-
-.agile__nav-button {
-  background: transparent;
-  border: none;
-  color: #00470e;
-  opacity: 0.6;
-  cursor: pointer;
-  font-size: 24px;
-  transition-duration: .3s;
-}
-
-.agile .agile__nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.agile .agile__nav-button--prev {
-  left: -45px;
-}
-
-.agile .agile__nav-button--next {
-  right: -45px;
-}
-
-.agile__nav-button:hover {
-  opacity: 1;
-}
-
-.agile__dot {
-  margin: 0 10px;
-}
-
-.agile__dot button {
-  background-color: #00470e;
-  opacity: 0.2;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: block;
-  height: 10px;
-  font-size: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  transition-duration: .3s;
-  width: 10px;
-}
-
-.agile__dot--current button, .agile__dot:hover button {
-  opacity: 1;
-}
-
 .agile .slide {
   align-items: center;
   box-sizing: border-box;
