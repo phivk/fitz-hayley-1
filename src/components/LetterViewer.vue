@@ -1,19 +1,30 @@
 <template>
   <div class="bg-creme sans-serif pv5 letter-viewer">
-    <div class="w-100">
+    <div v-if="$mq !== 'l'" class="w-100 mb4">
       <agile
-        v-if="$mq !== 'l'" 
+        ref="carousel"
         :options="agileOptions" 
-        class="agile mh5 mb4" 
+        @afterChange="currentIndex = $event.currentSlide"
+        class="agile mh2 mh4-ns mb3"
       >
         <div 
           v-for="(slide, index) in manuscriptPageImages" :key="index" 
           :class="`slide--${index}`"
-          class="slide mb3"
+          class="slide"
         >
           <img class="mw-100" :src="slide" />
         </div>
       </agile>
+      <div v-if="transcriptPageComponents || $mq !== 'l'" class="flex justify-center">
+        <Pagination
+          :currentIndex="indexForNonNerds"
+          :totalPages="totalPages"
+          :onClickForward="handleClickForward"
+          :onClickBackward="handleClickBackward"
+          :onClickFirst="handleClickFirst"
+          :onClickLast="handleClickLast"
+        />
+        </div>
     </div>
     <div class="w-100 flex justify-center">
       <div v-if="$mq === 'l'" class="mr2 letter-viewer__side">
@@ -26,6 +37,16 @@
               )
             }"
           ></div>
+        </div>
+        <div v-if="transcriptPageComponents || $mq === 'l'" class="flex justify-center mt4">
+          <Pagination
+            :currentIndex="indexForNonNerds"
+            :totalPages="totalPages"
+            :onClickForward="handleClickForward"
+            :onClickBackward="handleClickBackward"
+            :onClickFirst="handleClickFirst"
+            :onClickLast="handleClickLast"
+          />
         </div>
       </div>
       <div
@@ -44,16 +65,6 @@
           <div v-else>No transcript available</div>
         </div>
       </div>
-    </div>
-    <div v-if="transcriptPageComponents || $mq === 'l'" class="flex justify-center mt4">
-      <Pagination
-        :currentIndex="indexForNonNerds"
-        :totalPages="totalPages"
-        :onClickForward="handleClickForward"
-        :onClickBackward="handleClickBackward"
-        :onClickFirst="handleClickFirst"
-        :onClickLast="handleClickLast"
-      />
     </div>
   </div>
 </template>
@@ -92,9 +103,9 @@ export default {
     return {
       currentIndex: 0,
       agileOptions: {
-        dots: true,
+        dots: false,
         fade: true,
-        navButtons: true,
+        navButtons: false,
         infinite: false,
       },
     };
@@ -121,18 +132,30 @@ export default {
         return;
       }
       this.currentIndex = this.currentIndex - 1;
+      if (this.$refs.carousel) {
+        this.$refs.carousel.goToPrev()
+      }
     },
     handleClickForward() {
       if (this.currentIndex === this.totalPages - 1) {
         return;
       }
       this.currentIndex = this.currentIndex + 1;
+      if (this.$refs.carousel) {
+        this.$refs.carousel.goToNext()
+      }
     },
     handleClickFirst() {
       this.currentIndex = 0;
+      if (this.$refs.carousel) {
+        this.$refs.carousel.goTo(0)
+      }
     },
     handleClickLast() {
       this.currentIndex = this.totalPages - 1;
+      if (this.$refs.carousel) {
+        this.$refs.carousel.goTo(this.totalPages - 1)
+      }
     }
   },
 };
