@@ -1,14 +1,33 @@
 /******************************** TACHYONS Customization *******************************/
 
+
+$creme: #fff9eb;
+$green: #00470e;
+$berry: #7b2542;
+$ink: #2b2b2e;
+$light-green: #cdeed4;
+$light-berry: #eecdd8;
+$white: #fff;
+
 $colors: (
-  "creme": #fff9eb,
-  "green": #00470e,
-  "berry": #7b2542,
-  "ink": #2b2b2e,
-  "light-green": #cdeed4,
-  "light-berry": #eecdd8,
-  "white": #fff
+  "creme": $creme,
+  "green": $green,
+  "berry": $berry,
+  "ink": $ink,
+  "light-green": $light-green,
+  "light-berry": $light-berry,
+  "white": $white
 );
+
+:root {
+  --creme: #{$creme};
+  --green: #{$green};
+  --berry: #{$berry};
+  --ink: #{$ink};
+  --light-green: #{$light-green};
+  --light-berry: #{$light-berry};
+  --white: #{$white};
+}
 
 /* Generate atomic classes based on custom colors, 
    Credits to James Chambers https://jameschambers.co/writing/tachyons-custom-colours/ 
@@ -43,14 +62,6 @@ $colors: (
   font-family: "Libre Baskerville", serif;
 }
 .sans-serif {
-  font-family: "Open Sans", sans-serif;
-}
-
-.fitz-tooltip {
-  position: relative;
-  max-width: 348px;
-  padding: 1rem;
-  background-color: #cdeed4;
   font-family: "Open Sans", sans-serif;
 }
 

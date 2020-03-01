@@ -76,6 +76,8 @@ import Pagination from "./Pagination";
 import VueMq from 'vue-mq'
 import { VueAgile } from 'vue-agile'
 
+import "../css/tooltips.css";
+
 Vue.use(VueMq, {
   breakpoints: {
     s: 480,
