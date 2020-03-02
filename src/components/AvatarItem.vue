@@ -51,7 +51,7 @@ export default {
   height: 64px;
 }
 
-/* background classes for 7 entity types */
+/* background classes for different entity types */
 .avatar-item__bg-person {
   background-image: url("../images/avatar-placeholder-person.png");
 }
