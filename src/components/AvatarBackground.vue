@@ -2,7 +2,7 @@
   <div class="avatar-background absolute w-100 h-100 bg-creme overflow-hidden">
     <div
       v-if="showExclusionZone"
-      class="absolute bg-red o-50"
+      class="absolute ba b--red b--dashed o-50"
       :style="{ 
         left: `${excludeZone.minX}px`,
         right: `${clientWidth - excludeZone.maxX}px`,
