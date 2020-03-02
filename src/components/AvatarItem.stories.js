@@ -26,6 +26,25 @@ export const personWithImage = () => ({
     `
 });
 
+export const personWithImageId = () => ({
+  components: {
+    AvatarItem
+  },
+  data: function() {
+    return {
+      type: 'Person',
+      backgroundId: 'blake',
+    };
+  },
+  template:
+    `
+    <AvatarItem 
+      :type='type'
+      :backgroundId='backgroundId'
+    />
+    `
+});
+
 export const personWithoutImage = () => ({
   components: {
     AvatarItem
