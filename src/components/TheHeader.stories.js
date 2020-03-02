@@ -2,7 +2,7 @@ import TheHeader from "./TheHeader.vue";
 import "../css/reset.css";
 import "../css/global-styles.scss";
 
-export default { title: "Header" };
+export default { title: "TheHeader" };
 
 export const regular = () => ({
   components: { "the-header": TheHeader },
