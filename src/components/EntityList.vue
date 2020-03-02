@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <EntityCard
-      v-for="entity in entities"
+      v-for="entity in entitiesFiltered"
       :type="entity.type"
       :title="entity.title"
       :bgImageSrc="entity.bgImageSrc"
@@ -18,10 +18,14 @@ export default {
   },
   props: {
     entities: { type: Array, default: () => [] },
+    typeFilter: { type: String },
+  },
+  computed: {
+    entitiesFiltered () {
+      return this.typeFilter 
+        ? this.entities.filter(entity => entity.type === this.typeFilter)
+        : this.entities
+    },
   }
 };
 </script>
-
-<style scoped>
-
-</style>
