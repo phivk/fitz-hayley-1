@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .avatar-background {
-  /*z-index: -1;*/
+  z-index: -1;
 }
 .opacity-05 {
   opacity: 0.5;
