@@ -7,7 +7,7 @@
         left: `${excludeZone.minX}px`,
         right: `${clientWidth - excludeZone.maxX}px`,
         top: `${excludeZone.minY}px`,
-        bottom: `${clientWidth - excludeZone.maxY}px`,
+        bottom: `${clientHeight - excludeZone.maxY}px`,
       }"
     ></div>
     <AvatarItem
