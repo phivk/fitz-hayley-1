@@ -1,12 +1,13 @@
 <template>
-  <div class="">
+  <senction class="entity-list">
     <EntityCard
       v-for="entity in entitiesFiltered"
       :type="entity.type"
       :title="entity.title"
       :bgImageSrc="entity.bgImageSrc"
+      class="mb3"
     />
-  </div>
+  </senction>
 </template>
 
 <script>
