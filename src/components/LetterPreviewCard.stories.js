@@ -65,7 +65,7 @@ export const withManyEntityTypes = () => ({
 });
 
 
-export const withNoEntityTypes = () => ({
+export const withoutEntityTypes = () => ({
   components: { LetterPreviewCard },
   data: function() {
     return {
@@ -73,7 +73,6 @@ export const withNoEntityTypes = () => ({
       date: "1782-06-11",
       author: { name: "Firstname Lastname", link: "#" },
       recipient: { name: "Firstname Lastname", link: "#" },
-      entityCount: {},
       link: "#"
     };
   },
@@ -84,7 +83,6 @@ export const withNoEntityTypes = () => ({
       :date='date'
       :author='author' 
       :recipient='recipient' 
-      :entityCount='entityCount' 
       :link='link'
     />
     `

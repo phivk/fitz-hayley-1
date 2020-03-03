@@ -46,7 +46,7 @@ export default {
     date: { type: String, default: "" },
     author: { type: Object },
     recipient: { type: Object },
-    entityCount: { type: Object },
+    entityCount: { type: Object, default: {} },
     link: { type: String }
   }
 };
