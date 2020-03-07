@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-creme sans-serif pv5 letter-viewer">
+  <div class="bg-white sans-serif pv5 letter-viewer">
     <div v-if="$mq !== 'l'" class="w-100 mb4">
       <agile
         ref="carousel"
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div
-        class="ml2  bg-white f-copy letter-viewer__side letter-viewer__transcript-container"
+        class="ml2 bg-white f-copy ba b--black-20 letter-viewer__side letter-viewer__transcript-container"
         :class="$mq !== 'l' ? 'vh-75' : ''"
       >
         <div class="pa4 letter-viewer__transcript-container__inner">
