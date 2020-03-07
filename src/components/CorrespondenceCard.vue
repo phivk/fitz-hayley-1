@@ -23,7 +23,7 @@
     </div>
     <p class="sans-serif mt3">{{ curatorialStatement }}</p>
     <Button class="mt4"
-      >Explore <span class="db sans-serif ml2">☞</span></Button
+      >Explore <span class="sans-serif ml2 mt-2">☛</span></Button
     >
   </div>
 </template>
