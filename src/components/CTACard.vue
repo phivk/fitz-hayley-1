@@ -15,7 +15,7 @@ export default {
     title: String,
     content: String,
     buttonText: { type: String, default: "Explore" },
-    link: { type: String, default: "#" }
+    buttonLink: { type: String, default: "#" }
   },
   components: {
     Button: Button
