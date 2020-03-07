@@ -19,7 +19,7 @@
       {{ name }}
     </h2>
     <div class="mt3">
-      <NumberBullet :number="numberLetters + ''" class="mr2" />letters
+      <NumberBullet :number="numberLetters" class="mr2" />letters
     </div>
     <p class="sans-serif mt3">{{ curatorialStatement }}</p>
     <Button class="mt4"
@@ -38,7 +38,7 @@ export default {
   props: {
     names: { type: Array, default: () => [] },
     backgroundIds: { type: Array, default: () => [] },
-    numberLetters: Number,
+    numberLetters: { type: Number },
     curatorialStatement: { type: String, default: "" },
     link: { type: String, default: "#" }
   },
