@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sans-serif">
     <h1 class="mt3">Tachyons classes</h1>
 
     <h2 class="mt2">display</h2>
