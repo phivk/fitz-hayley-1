@@ -1,10 +1,17 @@
 <template>
   <section class="letter-list">
     <div class="w-100 tr mb3">
-      <SortingSelector
+      <DropdownSelector
         v-if="sortObjects"
-        :sortOptions='sortNames'
-        v-on:index-change="onSortIndexChange"
+        :options='sortOrders'
+        :label="'sorted'"
+        v-on:index-change="onSortOrderIndexChange"
+      />
+      <DropdownSelector
+        v-if="sortObjects"
+        :options='sortOptions'
+        :label="'by'"
+        v-on:index-change="onSortOptionIndexChange"
       />
     </div>
     <LetterPreviewCard 
@@ -22,39 +29,60 @@
 
 <script>
 import LetterPreviewCard from "./LetterPreviewCard";
-import SortingSelector from "./SortingSelector";
+import DropdownSelector from "./DropdownSelector";
 import { orderBy } from 'lodash';
 export default {
   name: "LetterList",
   data: () => {
     return {
-      sortIndex: 0,
-      sortOrder: 'asc',
+      sortOrders: ['asc', 'desc'],
+      sortOrderIndex: 0,
+      sortObjects: [
+        {
+          name: "title",
+          path: "title"
+        },
+        {
+          name: "date",
+          path: "date"
+        },
+        {
+          name: "author",
+          path: "author.name"
+        },
+        {
+          name: "recipient",
+          path: "recipient.name"
+        },
+      ],
+      sortOptionIndex: 0,
     }
   },
   components: {
     LetterPreviewCard,
-    SortingSelector,
+    DropdownSelector,
   },
   props: {
     letters: { type: Array, default: () => [] },
-    sortObjects: { type: Array, default: () => [] },
   },
   computed: {
     lettersSorted () {
       return orderBy(
         this.letters, 
-        [this.sortObjects[this.sortIndex].path],
-        [this.sortOrder]
+        [this.sortObjects[this.sortOptionIndex].path],
+        [this.sortOrders[this.sortOrderIndex]]
       )
     },
-    sortNames () {
+    sortOptions () {
       return this.sortObjects.map(sortObject => sortObject.name)
     },
   },
   methods: {
-    onSortIndexChange (newSortIndex) {
-      this.sortIndex = newSortIndex
+    onSortOrderIndexChange (newIndex) {
+      this.sortOrderIndex = newIndex
+    },
+    onSortOptionIndexChange (newIndex) {
+      this.sortOptionIndex = newIndex
     },
   },
 };

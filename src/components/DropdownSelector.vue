@@ -1,9 +1,9 @@
 <template>
-   <div class="sans-serif relative dib w5 tr">
-      sorted by <span @click="isExpanded = !isExpanded" class="green pointer">{{sortOptions[activeIndex]}} ▾</span>
+   <div class="sans-serif relative dib">
+      {{label}} <span @click="isExpanded = !isExpanded" class="green pointer">{{options[activeIndex]}} ▾</span>
       <div class="absolute z-1 right-0 shadow-4 mt1 bg-white" :class="isExpanded ? 'db' : 'dn'">
         <span 
-          v-for="(sortOption, index) in sortOptions" :key="index"
+          v-for="(sortOption, index) in options" :key="index"
           @click="onOptionClick(index)"
           class="ph3 pv1 db hover-bg-light-green"
         >
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "SortingSelector",
+  name: "DropdownSelector",
   data: function () {
     return {
       isExpanded: false,
@@ -23,7 +23,8 @@ export default {
     }
   },
   props: { 
-    sortOptions: { type: Array },
+    label: { type: String, default: "sorted by" },
+    options: { type: Array },
   },
   methods: {
     onOptionClick (index) {

@@ -8,24 +8,6 @@ export const regular = () => ({
   components: { LetterList },
   data: function() {
     return {
-      sortObjects: [
-        {
-          name: "title",
-          path: "title"
-        },
-        {
-          name: "date",
-          path: "date"
-        },
-        {
-          name: "author",
-          path: "author.name"
-        },
-        {
-          name: "recipient",
-          path: "recipient.name"
-        },
-      ],
       letters:[
         {
           title: "William Hayley to Anna Seward: letter",
@@ -71,7 +53,6 @@ export const regular = () => ({
     <div class="pa3">
       <LetterList 
         :letters='letters'
-        :sortObjects='sortObjects' 
       />
     </div>
     `
