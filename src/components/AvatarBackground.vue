@@ -14,7 +14,7 @@
       v-for="avatar in avatars"
       :type="avatar.type"
       :bgImageSrc="avatar.bgImageSrc"
-      class="absolute o-50"
+      class="absolute background-avatar-filter"
       :style="randomPosExclusiveStyle()"
     />
   </div>
@@ -92,5 +92,8 @@ export default {
 <style scoped>
 .avatar-background {
   z-index: -1;
+}
+.background-avatar-filter {
+  filter: contrast(40%) brightness(150%) saturate(75%);
 }
 </style>
