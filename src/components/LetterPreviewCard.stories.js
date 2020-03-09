@@ -17,11 +17,10 @@ export const regular = () => ({
         places: 3,
         events: 7
       },
-      link: "#"
+      link: "/another-page"
     };
   },
-  template:
-    `
+  template: `
     <LetterPreviewCard 
       :title='title' 
       :date='date'
@@ -48,11 +47,10 @@ export const withManyEntityTypes = () => ({
         families: 1,
         artworks: 3
       },
-      link: "#"
+      link: "/another-page"
     };
   },
-  template:
-    `
+  template: `
     <LetterPreviewCard 
       :title='title' 
       :date='date'
@@ -64,7 +62,6 @@ export const withManyEntityTypes = () => ({
     `
 });
 
-
 export const withoutEntityTypes = () => ({
   components: { LetterPreviewCard },
   data: function() {
@@ -73,11 +70,10 @@ export const withoutEntityTypes = () => ({
       date: "1782-06-11",
       author: { name: "Firstname Lastname", link: "#" },
       recipient: { name: "Firstname Lastname", link: "#" },
-      link: "#"
+      link: "/another-page"
     };
   },
-  template:
-    `
+  template: `
     <LetterPreviewCard 
       :title='title' 
       :date='date'
