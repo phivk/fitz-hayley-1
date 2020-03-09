@@ -25,7 +25,13 @@ export const single = () => ({
     };
   },
   template:
-    "<CorrespondenceHeader :correspondents='correspondents' :numberLetters='numberLetters' :curatorialStatement='curatorialStatement'/>"
+    `
+    <CorrespondenceHeader 
+      :correspondents='correspondents' 
+      :numberLetters='numberLetters' 
+      :curatorialStatement='curatorialStatement'
+    />
+    `
 });
 
 export const multi = () => ({
@@ -54,5 +60,11 @@ export const multi = () => ({
     };
   },
   template:
-    "<CorrespondenceHeader :correspondents='correspondents' :numberLetters='numberLetters' :curatorialStatement='curatorialStatement'/>"
+    `
+    <CorrespondenceHeader 
+      :correspondents='correspondents' 
+      :numberLetters='numberLetters' 
+      :curatorialStatement='curatorialStatement'
+    />
+    `
 });

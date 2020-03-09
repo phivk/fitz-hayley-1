@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="mt3">
-        <NumberBullet :number="numberLetters + ''" class="mr2" />letters
+        <NumberBullet :number="numberLetters" class="mr2" />letters
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@ export default {
   name: "CorrespondenceHeader",
   props: {
     correspondents: { type: Array, default: () => [] },
-    numberLetters: Number,
+    numberLetters: { type: Number },
     curatorialStatement: { type: String, default: "" }
   },
   computed: {

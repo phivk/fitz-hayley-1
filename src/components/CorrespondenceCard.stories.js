@@ -20,7 +20,16 @@ export const single = () => ({
     };
   },
   template:
-    "<CorrespondenceCard :names='names' :backgroundIds='backgroundIds' :numberLetters='numberLetters' :curatorialStatement='curatorialStatement' :buttonText='buttonText' :buttonLink='buttonLink'/>"
+    `
+    <CorrespondenceCard 
+      :names='names' 
+      :backgroundIds='backgroundIds' 
+      :numberLetters='numberLetters' 
+      :curatorialStatement='curatorialStatement' 
+      :buttonText='buttonText' 
+      :buttonLink='buttonLink'
+    />
+    `
 });
 
 export const multi = () => ({
