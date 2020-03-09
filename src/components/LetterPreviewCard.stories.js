@@ -21,14 +21,16 @@ export const regular = () => ({
     };
   },
   template: `
-    <LetterPreviewCard 
-      :title='title' 
-      :date='date'
-      :author='author' 
-      :recipient='recipient' 
-      :entityCount='entityCount' 
-      :link='link'
-    />
+    <div class="pa3">
+      <LetterPreviewCard 
+        :title='title' 
+        :date='date'
+        :author='author' 
+        :recipient='recipient' 
+        :entityCount='entityCount' 
+        :link='link'
+      />
+    </div>
     `
 });
 
@@ -51,14 +53,16 @@ export const withManyEntityTypes = () => ({
     };
   },
   template: `
-    <LetterPreviewCard 
-      :title='title' 
-      :date='date'
-      :author='author' 
-      :recipient='recipient' 
-      :entityCount='entityCount' 
-      :link='link'
-    />
+    <div class="pa3">
+      <LetterPreviewCard 
+        :title='title' 
+        :date='date'
+        :author='author' 
+        :recipient='recipient' 
+        :entityCount='entityCount' 
+        :link='link'
+      />
+    </div>
     `
 });
 
@@ -74,12 +78,14 @@ export const withoutEntityTypes = () => ({
     };
   },
   template: `
-    <LetterPreviewCard 
-      :title='title' 
-      :date='date'
-      :author='author' 
-      :recipient='recipient' 
-      :link='link'
-    />
+    <div class="pa3">
+      <LetterPreviewCard 
+        :title='title' 
+        :date='date'
+        :author='author' 
+        :recipient='recipient' 
+        :link='link'
+      />
+    </div>
     `
 });
