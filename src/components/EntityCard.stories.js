@@ -18,22 +18,26 @@ export const person = () => ({
   },
   template:
     `
-    <entity-card 
-      type="Person" 
-      title="Firstname Lastname" 
-      :bgImageSrc="bgImage"
-    />
+    <div class="pa3">
+      <entity-card 
+        type="Person" 
+        title="Firstname Lastname" 
+        :bgImageSrc="bgImage"
+      />
+    </div>
     `
 });
 
-export const personWithNoImage = () => ({
+export const personWithoutImage = () => ({
   components: { "entity-card": EntityCard },
   template:
     `
-    <entity-card 
-      type="Person" 
-      title="Firstname Lastname" 
-    />
+    <div class="pa3">
+      <entity-card 
+        type="Person" 
+        title="Firstname Lastname" 
+      />
+    </div>
     `
 });
 
@@ -46,21 +50,25 @@ export const place = () => ({
   },
   template:
     `
-    <entity-card 
-      type="Place" 
-      title="Location Name" 
-      :bgImageSrc="bgImage"
-    />
+    <div class="pa3">
+      <entity-card 
+        type="Place" 
+        title="Location Name" 
+        :bgImageSrc="bgImage"
+      />
+    </div>
     `
 });
 
-export const placeWithNoImage = () => ({
+export const placeWithoutImage = () => ({
   components: { "entity-card": EntityCard },
   template:
     `
-    <entity-card 
-      type="Place" 
-      title="Location Name" 
-    />
+    <div class="pa3">
+      <entity-card 
+        type="Place" 
+        title="Location Name" 
+      />
+    </div>
     `
 });

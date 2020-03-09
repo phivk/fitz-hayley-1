@@ -21,14 +21,16 @@ export const single = () => ({
   },
   template:
     `
-    <CorrespondenceCard 
-      :names='names' 
-      :backgroundIds='backgroundIds' 
-      :numberLetters='numberLetters' 
-      :curatorialStatement='curatorialStatement' 
-      :buttonText='buttonText' 
-      :buttonLink='buttonLink'
-    />
+    <div class="pa3">
+      <CorrespondenceCard 
+        :names='names' 
+        :backgroundIds='backgroundIds' 
+        :numberLetters='numberLetters' 
+        :curatorialStatement='curatorialStatement' 
+        :buttonText='buttonText' 
+        :buttonLink='buttonLink'
+      />
+    </div>
     `
 });
 
