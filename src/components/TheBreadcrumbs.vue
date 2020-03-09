@@ -1,7 +1,7 @@
 <template>
   <div>
     <span v-for="(crumb, index) in crumbs" :key="crumb.path">
-      <a :href="crumb.path" class="mr2 v-mid serif f6">{{ crumb.text }}</a>
+      <a :href="crumb.path" class="mr2 v-mid sans-serif f6">{{ crumb.text }}</a>
       <span v-if="index !== crumbs.length - 1" class="mr2 v-mid">➺</span>
     </span>
   </div>
