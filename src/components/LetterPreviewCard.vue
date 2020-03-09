@@ -2,13 +2,14 @@
   <div class="letter-preview-card bg-white w-100 sans-serif f5 flex shadow-4">
     <div class="letter-preview-card__left-side pa3">
       <h2 class="f3 serif mb2">{{ title }}</h2>
-      <h3 class="f4 mb2">{{date}}</h3>
+      <h3 class="f4 mb2">{{ date }}</h3>
       <div class="mb3">
         <p v-if="author">
           From <a :href="author.link" class="berry dim">{{ author.name }}</a>
         </p>
         <p v-if="recipient">
-          To <a :href="recipient.link" class="berry dim">{{ recipient.name }}</a>
+          To
+          <a :href="recipient.link" class="berry dim">{{ recipient.name }}</a>
         </p>
       </div>
       <div v-if="Object.keys(entityCount).length" class="mb2">
@@ -21,8 +22,8 @@
         </span>
       </div>
       <div class="db">
-        <Button :link="link"
-          >Read letter<span class="sans-serif ml2 mt-2">☛</span></Button
+        <ButtonLink :link="link"
+          >Read letter<span class="sans-serif ml2 mt-2">☛</span></ButtonLink
         >
       </div>
     </div>
@@ -34,19 +35,19 @@
 
 <script>
 import NumberBullet from "./NumberBullet";
-import Button from "./Button";
+import ButtonLink from "./ButtonLink";
 export default {
   name: "LetterPreviewCard",
   components: {
     NumberBullet,
-    Button
+    ButtonLink
   },
   props: {
     title: { type: String, default: "" },
     date: { type: String, default: "" },
     author: { type: Object },
     recipient: { type: Object },
-    entityCount: { type: Object, default: {} },
+    entityCount: { type: Object, default: () => ({}) },
     link: { type: String }
   }
 };
