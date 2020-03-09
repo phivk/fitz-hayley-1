@@ -2,12 +2,14 @@
   <div class="bg-white shadow-4 mw6 pa3">
     <h1 class="serif f2 mb3">{{ title }}</h1>
     <p class="sans-serif mb3">{{ content }}</p>
-    <Button>{{ buttonText }}<span class="sans-serif ml2 mt-2">☛</span></Button>
+    <ButtonLink :link="buttonLink"
+      >{{ buttonText }}<span class="sans-serif ml2 mt-2">☛</span></ButtonLink
+    >
   </div>
 </template>
 
 <script>
-import Button from "./Button";
+import ButtonLink from "./ButtonLink";
 
 export default {
   name: "CTACard",
@@ -18,7 +20,7 @@ export default {
     buttonLink: { type: String, default: "#" }
   },
   components: {
-    Button: Button
+    ButtonLink: ButtonLink
   }
 };
 </script>
