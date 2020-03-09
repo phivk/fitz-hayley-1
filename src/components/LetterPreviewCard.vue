@@ -27,7 +27,10 @@
         >
       </div>
     </div>
-    <div class="letter-preview-card__right-side h4 h5-m h-auto-l">
+    <div 
+      class="letter-preview-card__right-side h4 h5-m h-auto-l"
+      :style="{ backgroundImage: `url(${letterBgSrc})` }"
+    >
       <a class="db w-100 h-100" :href="link"></a>
     </div>
   </div>
@@ -36,6 +39,7 @@
 <script>
 import NumberBullet from "./NumberBullet";
 import ButtonLink from "./ButtonLink";
+import imageLetterDefault from "../images/letter-page-1.jpg";
 export default {
   name: "LetterPreviewCard",
   components: {
@@ -48,7 +52,8 @@ export default {
     author: { type: Object },
     recipient: { type: Object },
     entityCount: { type: Object, default: () => ({}) },
-    link: { type: String }
+    link: { type: String },
+    letterBgSrc: { type: String, default: imageLetterDefault },
   }
 };
 </script>
@@ -59,7 +64,6 @@ export default {
 }
 
 .letter-preview-card__right-side {
-  background-image: url("../images/letter-page-1.jpg");
   /* Cutting away the black border around the letter */
   background-position: -60px -50px;
   background-size: calc(100% + 200px);
