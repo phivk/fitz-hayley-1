@@ -22,14 +22,14 @@
       <NumberBullet :number="numberLetters" class="mr2" />letters
     </div>
     <p class="sans-serif mt3">{{ curatorialStatement }}</p>
-    <Button class="mt4"
-      >Explore <span class="sans-serif ml2 mt-2">☛</span></Button
+    <ButtonLink class="mt4" :link="buttonLink"
+      >{{ buttonText }}<span class="sans-serif ml2 mt-2">☛</span></ButtonLink
     >
   </div>
 </template>
 
 <script>
-import Button from "./Button";
+import ButtonLink from "./ButtonLink";
 import NumberBullet from "./NumberBullet";
 import AvatarItem from "./AvatarItem";
 
@@ -40,7 +40,8 @@ export default {
     backgroundIds: { type: Array, default: () => [] },
     numberLetters: { type: Number },
     curatorialStatement: { type: String, default: "" },
-    link: { type: String, default: "#" }
+    buttonText: { type: String, default: "Explore" },
+    buttonLink: { type: String, default: "#" }
   },
   computed: {
     avatars: function() {
@@ -49,7 +50,7 @@ export default {
     }
   },
   components: {
-    Button,
+    ButtonLink,
     NumberBullet,
     AvatarItem
   }
