@@ -14,11 +14,13 @@ export const single = () => ({
       backgroundIds: ["flaxman"],
       numberLetters: 7,
       curatorialStatement:
-        "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
+        "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character.",
+      buttonText: "Explore",
+      buttonLink: "/another-page"
     };
   },
   template:
-    "<CorrespondenceCard :names='names' :backgroundIds='backgroundIds' :numberLetters='numberLetters' :curatorialStatement='curatorialStatement'/>"
+    "<CorrespondenceCard :names='names' :backgroundIds='backgroundIds' :numberLetters='numberLetters' :curatorialStatement='curatorialStatement' :buttonText='buttonText' :buttonLink='buttonLink'/>"
 });
 
 export const multi = () => ({
@@ -31,17 +33,20 @@ export const multi = () => ({
       backgroundIds: ["blake", "flaxman"],
       numberLetters: 7,
       curatorialStatement:
-        "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
+        "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character.",
+      buttonText: "Explore",
+      buttonLink: "/another-page"
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <CorrespondenceCard 
         :names='names' 
         :backgroundIds='backgroundIds' 
         :numberLetters='numberLetters' 
         :curatorialStatement='curatorialStatement'
+        :buttonText='buttonText' 
+        :buttonLink='buttonLink'
       />
     </div>
     `
