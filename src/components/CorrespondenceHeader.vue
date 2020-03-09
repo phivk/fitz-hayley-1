@@ -16,7 +16,11 @@
     </div>
     <div>
       <h3 class="serif f4 mb2">Hayley's correspondence with</h3>
-      <div v-for="correspondent in correspondents" :key="correspondent.name" class="mb2">
+      <div
+        v-for="correspondent in correspondents"
+        :key="correspondent.name"
+        class="mb2"
+      >
         <h2 class="serif f2">
           {{ correspondent.name }}
         </h2>
@@ -40,7 +44,6 @@
 </template>
 
 <script>
-import Button from "./Button";
 import NumberBullet from "./NumberBullet";
 import AvatarItem from "./AvatarItem";
 
@@ -49,7 +52,7 @@ export default {
   props: {
     correspondents: { type: Array, default: () => [] },
     numberLetters: Number,
-    curatorialStatement: { type: String, default: "" },
+    curatorialStatement: { type: String, default: "" }
   },
   computed: {
     avatars: function() {
@@ -58,7 +61,6 @@ export default {
     }
   },
   components: {
-    Button,
     NumberBullet,
     AvatarItem
   }
