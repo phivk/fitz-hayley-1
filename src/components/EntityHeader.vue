@@ -32,7 +32,7 @@
           <span class="dib w4">{{ key }}</span> <span class="fw6">{{ value }}</span>
         </div>
       </div>
-      <NumberBullet :number="numberLetters + ''" class="mb2 mr2"/>letters
+      <NumberBullet :number="numberLetters" class="mb2 mr2"/>letters
       <AccordionLink v-if="Object.entries(metadataTail).length !== 0" showText="show additional metadata ▾" hideText="hide additional metadata ▴" :isExpanded="false">
         <div v-for="(value, key) in metadataTail" class="mb2">
           <span class="dib w4">{{ key }}</span> <span class="fw6">{{ value }}</span>
