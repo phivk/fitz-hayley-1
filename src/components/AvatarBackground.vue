@@ -44,10 +44,7 @@ export default {
     return {
       avatarsHydrated: [],
       // separationFactor: how much to separate individual avatars?
-      // 0.5 = allow upto half of avatar size to overlap
-      // 1   = allow upto 'border to border' fit
-      // 1.5 = require at least half of avatar size in between
-      separationFactor: 1.1,
+      separationFactor: 2,
     }
   },
   props: {
@@ -112,7 +109,8 @@ export default {
         maxY: pos.y + this.separationFactor * size
       }
     },
-    hydrateOneAvatar (avatar) {
+    hydrateOneAvatar (avatar, iterations) {
+      if (iterations > 4) { return } // prevent too much recursion
       let candidatePos = this.randomPosExclusive()
       let existingPositions = this.avatarsHydrated.map(a => a.pos)
       if (!this.overlapsPositions(candidatePos, existingPositions)) {
@@ -123,12 +121,12 @@ export default {
           pos: candidatePos
         })
       } else {
-        this.hydrateOneAvatar(avatar)
+        this.hydrateOneAvatar(avatar, iterations + 1)
       }
     },
     hydrateAvatars () {
       this.avatars.forEach(avatar => {
-        this.hydrateOneAvatar(avatar)
+        this.hydrateOneAvatar(avatar, 0)
       })
     },
   },
