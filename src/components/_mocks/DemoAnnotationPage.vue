@@ -3,7 +3,7 @@
     <p>My dear Eliza</p>
     <p>
       Your letter has indeed struck me with a double surprize. –
-      <span class="underline pointer" v-tooltip.auto="tooltipContent">of the first</span>
+      <span class="underline pointer" v-tooltip.auto="tooltipOptions">of the first</span>
       I shall not speak at present, because I feel perhaps a little too like the
       honest old servant, you mention, to relish it on the sudden
     </p>
@@ -40,8 +40,10 @@ export default {
   name: "DemoAnnotationPage",
   data: function() {
     return {
-      tooltipContent:
-        "This surprise is the marriage of Hayley's friend, John Beridge's widow to Mr Twigge."
+      tooltipOptions: {
+        content: "This surprise is the marriage of Hayley's friend, John Beridge's widow to Mr Twigge.",
+        trigger: "hover click focus'"
+      }
     };
   }
 };
