@@ -17,12 +17,25 @@
       :bgImageSrc="avatar.bgImageSrc"
       :style="avatar.style"
       class="absolute filter-lowcontrast"
+      :small="$mq === 's'"
     />
   </div>
 </template>
 
 <script>
 import AvatarItem from "./AvatarItem";
+import Vue from "vue";
+import VueMq from "vue-mq";
+
+Vue.use(VueMq, {
+  breakpoints: {
+    s: 480,
+    m: 960,
+    l: Infinity
+  },
+  defaultBreakpoint: "s"
+});
+
 export default {
   name: "AvatarBackground",
   components: {
@@ -30,13 +43,9 @@ export default {
   },
   data: function() {
     return {
-      avatarSize: 150,
       avatarsHydrated: [],
       // separationFactor: how much to separate individual avatars?
-      // 0.5 = allow upto half of avatar size to overlap
-      // 1   = allow upto 'border to border' fit
-      // 1.5 = require at least half of avatar size in between
-      separationFactor: 1.1
+      separationFactor: 2
     };
   },
   props: {
@@ -45,6 +54,9 @@ export default {
     showExclusionZone: { type: Boolean, default: false }
   },
   computed: {
+    avatarSize() {
+      return this.$mq !== "s" ? 150 : 64;
+    },
     clientWidth() {
       return document.body.clientWidth || document.documentElement.clientWidth;
     },
@@ -105,7 +117,10 @@ export default {
         maxY: pos.y + this.separationFactor * size
       };
     },
-    hydrateOneAvatar(avatar) {
+    hydrateOneAvatar(avatar, iterations) {
+      if (iterations > 4) {
+        return;
+      } // prevent too much recursion
       let candidatePos = this.randomPosExclusive();
       let existingPositions = this.avatarsHydrated.map(a => a.pos);
       if (!this.overlapsPositions(candidatePos, existingPositions)) {
@@ -116,12 +131,12 @@ export default {
           pos: candidatePos
         });
       } else {
-        this.hydrateOneAvatar(avatar);
+        this.hydrateOneAvatar(avatar, iterations + 1);
       }
     },
     hydrateAvatars() {
       this.avatars.forEach(avatar => {
-        this.hydrateOneAvatar(avatar);
+        this.hydrateOneAvatar(avatar, 0);
       });
     }
   },
