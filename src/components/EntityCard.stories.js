@@ -16,8 +16,7 @@ export const person = () => ({
       bgImage: imageFlaxman
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <entity-card 
         type="Person" 
@@ -30,8 +29,7 @@ export const person = () => ({
 
 export const personWithoutImage = () => ({
   components: { "entity-card": EntityCard },
-  template:
-    `
+  template: `
     <div class="pa3">
       <entity-card 
         type="Person" 
@@ -48,8 +46,7 @@ export const place = () => ({
       bgImage: imageSussex
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <entity-card 
         type="Place" 
@@ -62,8 +59,7 @@ export const place = () => ({
 
 export const placeWithoutImage = () => ({
   components: { "entity-card": EntityCard },
-  template:
-    `
+  template: `
     <div class="pa3">
       <entity-card 
         type="Place" 

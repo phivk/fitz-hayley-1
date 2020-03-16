@@ -13,56 +13,55 @@ export const regular = () => ({
     return {
       bgImagePerson: imageFlaxman,
       bgImagePlace: imageSussex,
-      entities:[
+      entities: [
         {
           type: "Person",
           title: "Firstname Lastname",
           linkPath: "#",
-          bgImageSrc: imageFlaxman,
+          bgImageSrc: imageFlaxman
         },
         {
           type: "Person",
           title: "Firstname Lastname",
-          linkPath: "#",
-        },
-        {
-          type: "Person",
-          title: "Firstname Lastname",
-          linkPath: "#",
-          bgImageSrc: imageFlaxman,
+          linkPath: "#"
         },
         {
           type: "Person",
           title: "Firstname Lastname",
           linkPath: "#",
+          bgImageSrc: imageFlaxman
+        },
+        {
+          type: "Person",
+          title: "Firstname Lastname",
+          linkPath: "#"
         },
         {
           type: "Place",
           title: "Place Name",
           linkPath: "#",
-          bgImageSrc: imageSussex,
+          bgImageSrc: imageSussex
+        },
+        {
+          type: "Place",
+          title: "Place Name",
+          linkPath: "#"
         },
         {
           type: "Place",
           title: "Place Name",
           linkPath: "#",
+          bgImageSrc: imageSussex
         },
         {
           type: "Place",
           title: "Place Name",
-          linkPath: "#",
-          bgImageSrc: imageSussex,
-        },
-        {
-          type: "Place",
-          title: "Place Name",
-          linkPath: "#",
-        },
-      ],
+          linkPath: "#"
+        }
+      ]
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <EntityList 
         :entities='entities'
@@ -78,56 +77,55 @@ export const filtered = () => ({
       typeFilter: "Person",
       bgImagePerson: imageFlaxman,
       bgImagePlace: imageSussex,
-      entities:[
+      entities: [
         {
           type: "Person",
           title: "Firstname Lastname",
           linkPath: "#",
-          bgImageSrc: imageFlaxman,
+          bgImageSrc: imageFlaxman
         },
         {
           type: "Person",
           title: "Firstname Lastname",
-          linkPath: "#",
-        },
-        {
-          type: "Person",
-          title: "Firstname Lastname",
-          linkPath: "#",
-          bgImageSrc: imageFlaxman,
+          linkPath: "#"
         },
         {
           type: "Person",
           title: "Firstname Lastname",
           linkPath: "#",
+          bgImageSrc: imageFlaxman
+        },
+        {
+          type: "Person",
+          title: "Firstname Lastname",
+          linkPath: "#"
         },
         {
           type: "Place",
           title: "Place Name",
           linkPath: "#",
-          bgImageSrc: imageSussex,
+          bgImageSrc: imageSussex
+        },
+        {
+          type: "Place",
+          title: "Place Name",
+          linkPath: "#"
         },
         {
           type: "Place",
           title: "Place Name",
           linkPath: "#",
+          bgImageSrc: imageSussex
         },
         {
           type: "Place",
           title: "Place Name",
-          linkPath: "#",
-          bgImageSrc: imageSussex,
-        },
-        {
-          type: "Place",
-          title: "Place Name",
-          linkPath: "#",
-        },
-      ],
+          linkPath: "#"
+        }
+      ]
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <EntityList 
         :entities='entities'

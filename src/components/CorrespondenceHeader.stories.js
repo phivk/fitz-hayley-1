@@ -16,16 +16,15 @@ export const single = () => ({
           backgroundId: "flaxman",
           birthDate: "1755-07-06",
           occupation: "sculptor",
-          relationToHayley: "Friend of",
-        },
+          relationToHayley: "Friend of"
+        }
       ],
       numberLetters: 7,
       curatorialStatement:
         "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
     };
   },
-  template:
-    `
+  template: `
     <CorrespondenceHeader 
       :correspondents='correspondents' 
       :numberLetters='numberLetters' 
@@ -46,21 +45,20 @@ export const multi = () => ({
           backgroundId: "flaxman",
           birthDate: "1755-07-06",
           occupation: "sculptor",
-          relationToHayley: "Friend of",
+          relationToHayley: "Friend of"
         },
         {
           name: "William Blake",
           backgroundId: "blake",
-          relationToHayley: "Friend",
-        },
+          relationToHayley: "Friend"
+        }
       ],
       numberLetters: 7,
       curatorialStatement:
         "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
     };
   },
-  template:
-    `
+  template: `
     <CorrespondenceHeader 
       :correspondents='correspondents' 
       :numberLetters='numberLetters' 

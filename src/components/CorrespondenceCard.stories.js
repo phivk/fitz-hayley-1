@@ -19,8 +19,7 @@ export const single = () => ({
       buttonLink: "/another-page"
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <CorrespondenceCard 
         :names='names' 
