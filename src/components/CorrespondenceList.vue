@@ -1,11 +1,12 @@
 <template>
   <section>
-    <CorrespondenceCard 
+    <CorrespondenceCard
       v-for="correspondence in correspondences"
-      :names='correspondence.names' 
-      :backgroundIds='correspondence.backgroundIds' 
-      :numberLetters='correspondence.numberLetters' 
-      :curatorialStatement='correspondence.curatorialStatement'
+      :key="correspondence.names.join()"
+      :names="correspondence.names"
+      :backgroundIds="correspondence.backgroundIds"
+      :numberLetters="correspondence.numberLetters"
+      :curatorialStatement="correspondence.curatorialStatement"
       class="ma3 dib v-top"
     />
   </section>
@@ -16,10 +17,10 @@ import CorrespondenceCard from "./CorrespondenceCard";
 export default {
   name: "CorrespondenceList",
   components: {
-    CorrespondenceCard,
+    CorrespondenceCard
   },
   props: {
-    correspondences: { type: Array, default: () => [] },
-  },
+    correspondences: { type: Array, default: () => [] }
+  }
 };
 </script>
