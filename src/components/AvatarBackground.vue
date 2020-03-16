@@ -3,15 +3,16 @@
     <div
       v-if="showExclusionZone"
       class="absolute ba b--red b--dashed o-50"
-      :style="{ 
+      :style="{
         left: `${excludeZone.minX}px`,
         right: `${clientWidth - excludeZone.maxX}px`,
         top: `${excludeZone.minY}px`,
-        bottom: `${clientHeight - excludeZone.maxY}px`,
+        bottom: `${clientHeight - excludeZone.maxY}px`
       }"
     ></div>
     <AvatarItem
-      v-for="avatar in avatarsHydrated"
+      v-for="(avatar, index) in avatarsHydrated"
+      :key="index"
       :type="avatar.type"
       :bgImageSrc="avatar.bgImageSrc"
       :style="avatar.style"
@@ -24,115 +25,124 @@
 <script>
 import AvatarItem from "./AvatarItem";
 import Vue from "vue";
-import VueMq from 'vue-mq'
+import VueMq from "vue-mq";
 
 Vue.use(VueMq, {
   breakpoints: {
     s: 480,
     m: 960,
-    l: Infinity,
+    l: Infinity
   },
-  defaultBreakpoint: 's'
-})
+  defaultBreakpoint: "s"
+});
 
 export default {
   name: "AvatarBackground",
   components: {
-    AvatarItem,
+    AvatarItem
   },
   data: function() {
     return {
       avatarsHydrated: [],
       // separationFactor: how much to separate individual avatars?
-      separationFactor: 2,
-    }
+      separationFactor: 2
+    };
   },
   props: {
     avatars: { type: Array, default: () => [] },
     excludeZoneRatios: { type: Object },
-    showExclusionZone: { type: Boolean, default: false },
+    showExclusionZone: { type: Boolean, default: false }
   },
   computed: {
-    avatarSize () {
-      return this.$mq !== 's' ? 150 : 64
+    avatarSize() {
+      return this.$mq !== "s" ? 150 : 64;
     },
-    clientWidth () {
-      return document.body.clientWidth || document.documentElement.clientWidth
+    clientWidth() {
+      return document.body.clientWidth || document.documentElement.clientWidth;
     },
-    clientHeight () {
-      return document.body.clientHeight || document.documentElement.clientHeight
+    clientHeight() {
+      return (
+        document.body.clientHeight || document.documentElement.clientHeight
+      );
     },
-    excludeZone () {
+    excludeZone() {
       return {
         minX: this.excludeZoneRatios.minX * this.clientWidth,
         maxX: this.excludeZoneRatios.maxX * this.clientWidth,
         minY: this.excludeZoneRatios.minY * this.clientHeight,
-        maxY: this.excludeZoneRatios.maxY * this.clientHeight,
-      }
-    },
+        maxY: this.excludeZoneRatios.maxY * this.clientHeight
+      };
+    }
   },
   methods: {
-    randomPos () {
+    randomPos() {
       return {
         x: Math.random() * this.clientWidth,
-        y: Math.random() * this.clientHeight,
-      }
+        y: Math.random() * this.clientHeight
+      };
     },
-    randomPosExclusive () {
-      let randomPos = this.randomPos()
+    randomPosExclusive() {
+      let randomPos = this.randomPos();
       return this.overlaps(randomPos, this.excludeZone)
         ? this.randomPosExclusive()
-        : randomPos
+        : randomPos;
     },
-    getStyleForPos (pos) {
-      return { 
-        left: pos.x - (0.5 * this.avatarSize) + 'px',
-        top: pos.y - (0.5 * this.avatarSize) + 'px',
-      }
+    getStyleForPos(pos) {
+      return {
+        left: pos.x - 0.5 * this.avatarSize + "px",
+        top: pos.y - 0.5 * this.avatarSize + "px"
+      };
     },
-    overlaps (pos, excludeArea) {
-      return pos.x > excludeArea.minX &&
-             pos.x < excludeArea.maxX &&
-             pos.y > excludeArea.minY &&
-             pos.y < excludeArea.maxY
+    overlaps(pos, excludeArea) {
+      return (
+        pos.x > excludeArea.minX &&
+        pos.x < excludeArea.maxX &&
+        pos.y > excludeArea.minY &&
+        pos.y < excludeArea.maxY
+      );
     },
-    overlapsPositions (candidatePos, existingPositions) {
+    overlapsPositions(candidatePos, existingPositions) {
       return existingPositions.some(pos => {
-        return this.overlaps(candidatePos, this.getAreaForPos(pos, this.avatarSize))
-      })
+        return this.overlaps(
+          candidatePos,
+          this.getAreaForPos(pos, this.avatarSize)
+        );
+      });
     },
-    getAreaForPos (pos, size) {
+    getAreaForPos(pos, size) {
       return {
         minX: pos.x - this.separationFactor * size,
         maxX: pos.x + this.separationFactor * size,
         minY: pos.y - this.separationFactor * size,
         maxY: pos.y + this.separationFactor * size
-      }
+      };
     },
-    hydrateOneAvatar (avatar, iterations) {
-      if (iterations > 4) { return } // prevent too much recursion
-      let candidatePos = this.randomPosExclusive()
-      let existingPositions = this.avatarsHydrated.map(a => a.pos)
+    hydrateOneAvatar(avatar, iterations) {
+      if (iterations > 4) {
+        return;
+      } // prevent too much recursion
+      let candidatePos = this.randomPosExclusive();
+      let existingPositions = this.avatarsHydrated.map(a => a.pos);
       if (!this.overlapsPositions(candidatePos, existingPositions)) {
         this.avatarsHydrated.push({
           type: avatar.type,
           bgImageSrc: avatar.bgImageSrc,
           style: this.getStyleForPos(candidatePos),
           pos: candidatePos
-        })
+        });
       } else {
-        this.hydrateOneAvatar(avatar, iterations + 1)
+        this.hydrateOneAvatar(avatar, iterations + 1);
       }
     },
-    hydrateAvatars () {
+    hydrateAvatars() {
       this.avatars.forEach(avatar => {
-        this.hydrateOneAvatar(avatar, 0)
-      })
-    },
+        this.hydrateOneAvatar(avatar, 0);
+      });
+    }
   },
-  created () {
-    this.hydrateAvatars()
-  },
+  created() {
+    this.hydrateAvatars();
+  }
 };
 </script>
 
