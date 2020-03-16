@@ -9,8 +9,7 @@ export const regular = () => ({
   data: function() {
     return {};
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <BreakPoints/>
     </div>

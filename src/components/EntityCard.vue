@@ -1,10 +1,10 @@
 <template>
   <div class="entity-card bg-white pa3 sans-serif shadow-4">
     <div class="flex items-center">
-      <AvatarItem :type="type" small :bgImageSrc="bgImageSrc" class="mr3"/>
+      <AvatarItem :type="type" small :bgImageSrc="bgImageSrc" class="mr3" />
       <div>
         <h2 class="serif f3">{{ title }}</h2>
-        <a :href="linkPath">{{linkText}}</a>
+        <a :href="linkPath">{{ linkText }}</a>
       </div>
     </div>
   </div>
@@ -20,11 +20,11 @@ export default {
     title: { type: String },
     linkText: {
       type: String,
-      default: 'Read more'
+      default: "Read more"
     },
     linkPath: {
       type: String,
-      default: '#'
+      default: "#"
     },
     bgImageSrc: {
       type: String

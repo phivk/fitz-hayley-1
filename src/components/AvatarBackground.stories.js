@@ -13,50 +13,49 @@ export const regular = () => ({
   components: { AvatarBackground },
   data: function() {
     return {
-      avatars:[
+      avatars: [
         {
-          type: 'Person',
-          bgImageSrc: imageHayley,
+          type: "Person",
+          bgImageSrc: imageHayley
         },
         {
-          type: 'Person',
-          bgImageSrc: imageFlaxman,
+          type: "Person",
+          bgImageSrc: imageFlaxman
         },
         {
-          type: 'Person',
-          bgImageSrc: imageBlake,
+          type: "Person",
+          bgImageSrc: imageBlake
         },
         {
-          type: 'Place',
-          bgImageSrc: imageSussex,
+          type: "Place",
+          bgImageSrc: imageSussex
         },
         {
-          type: 'Person',
-          bgImageSrc: imageHayley,
+          type: "Person",
+          bgImageSrc: imageHayley
         },
         {
-          type: 'Person',
-          bgImageSrc: imageFlaxman,
+          type: "Person",
+          bgImageSrc: imageFlaxman
         },
         {
-          type: 'Person',
-          bgImageSrc: imageBlake,
+          type: "Person",
+          bgImageSrc: imageBlake
         },
         {
-          type: 'Place',
-          bgImageSrc: imageSussex,
-        },
+          type: "Place",
+          bgImageSrc: imageSussex
+        }
       ],
       excludeZoneRatios: {
         minX: 0.2,
         maxX: 0.8,
         minY: 0.2,
-        maxY: 0.8,
+        maxY: 0.8
       }
     };
   },
-  template:
-    `
+  template: `
     <AvatarBackground 
       :avatars='avatars'
       :excludeZoneRatios='excludeZoneRatios'
@@ -68,51 +67,50 @@ export const showExclusionZone = () => ({
   components: { AvatarBackground },
   data: function() {
     return {
-      avatars:[
+      avatars: [
         {
-          type: 'Person',
-          bgImageSrc: imageHayley,
+          type: "Person",
+          bgImageSrc: imageHayley
         },
         {
-          type: 'Person',
-          bgImageSrc: imageFlaxman,
+          type: "Person",
+          bgImageSrc: imageFlaxman
         },
         {
-          type: 'Person',
-          bgImageSrc: imageBlake,
+          type: "Person",
+          bgImageSrc: imageBlake
         },
         {
-          type: 'Place',
-          bgImageSrc: imageSussex,
+          type: "Place",
+          bgImageSrc: imageSussex
         },
         {
-          type: 'Person',
-          bgImageSrc: imageHayley,
+          type: "Person",
+          bgImageSrc: imageHayley
         },
         {
-          type: 'Person',
-          bgImageSrc: imageFlaxman,
+          type: "Person",
+          bgImageSrc: imageFlaxman
         },
         {
-          type: 'Person',
-          bgImageSrc: imageBlake,
+          type: "Person",
+          bgImageSrc: imageBlake
         },
         {
-          type: 'Place',
-          bgImageSrc: imageSussex,
-        },
+          type: "Place",
+          bgImageSrc: imageSussex
+        }
       ],
       excludeZoneRatios: {
         minX: 0.2,
         maxX: 0.8,
         minY: 0.2,
-        maxY: 0.8,
+        maxY: 0.8
       },
-      showExclusionZone: true,
+      showExclusionZone: true
     };
   },
-  template:
-    `
+  template: `
     <AvatarBackground 
       :avatars='avatars'
       :excludeZoneRatios='excludeZoneRatios'

@@ -1,6 +1,8 @@
 <template>
-  <div >
-    <a class="db mb2" href="#0" @click.prevent="isExpanded = !isExpanded">{{isExpanded ? hideText : showText}}</a>
+  <div>
+    <a class="db mb2" href="#0" @click.prevent="isExpanded = !isExpanded">{{
+      isExpanded ? hideText : showText
+    }}</a>
     <slot v-if="isExpanded"></slot>
   </div>
 </template>
@@ -8,10 +10,10 @@
 <script>
 export default {
   name: "AccordionLink",
-  props: { 
+  props: {
     showText: { type: String },
     hideText: { type: String },
-    isExpanded: { type: Boolean },
+    isExpanded: { type: Boolean }
   }
 };
 </script>

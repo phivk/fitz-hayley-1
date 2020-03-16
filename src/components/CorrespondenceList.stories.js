@@ -8,7 +8,7 @@ export const regular = () => ({
   components: { CorrespondenceList },
   data: function() {
     return {
-      correspondences:[
+      correspondences: [
         {
           names: ["William Blake"],
           backgroundIds: ["blake"],
@@ -29,12 +29,11 @@ export const regular = () => ({
           numberLetters: 7,
           curatorialStatement:
             "A brief curatorial statement, describing the correspondent(s), the relationship they had with Hayley and what this correspondence reveals about Hayleys character."
-        },
-      ],
+        }
+      ]
     };
   },
-  template:
-    `
+  template: `
     <CorrespondenceList 
       :correspondences='correspondences'
     />

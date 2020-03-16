@@ -9,11 +9,10 @@ export const regular = () => ({
   data: function() {
     return {
       options: ["title", "date", "author", "recipient"],
-      label: "sorted by",
+      label: "sorted by"
     };
   },
-  template: 
-    `
+  template: `
     <div class="pa4">
       <DropdownSelector 
         :options='options' 

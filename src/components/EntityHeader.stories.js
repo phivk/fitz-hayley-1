@@ -24,14 +24,14 @@ export const person = () => ({
       deathPlace: "NYC",
       occupation: "sculptor",
       nickname: "The Flax",
-      biographicalText: "John Flaxman RA (6 July 1755 – 7 December 1826) was a British sculptor and draughtsman, and a leading figure in British and European Neoclassicism. Early in his career he worked as a modeller for Josiah Wedgwood's pottery. He spent several years in Rome, where he produced his first book illustrations. He was a prolific maker of funerary monuments.",
+      biographicalText:
+        "John Flaxman RA (6 July 1755 – 7 December 1826) was a British sculptor and draughtsman, and a leading figure in British and European Neoclassicism. Early in his career he worked as a modeller for Josiah Wedgwood's pottery. He spent several years in Rome, where he produced his first book illustrations. He was a prolific maker of funerary monuments.",
       bibliography: "Example Bibliography",
       relationToHayley: "Friend of",
-      numberLetters: 7,
+      numberLetters: 7
     };
   },
-  template:
-    `<EntityHeader 
+  template: `<EntityHeader 
       :type='type' 
       :title='title' 
       :metadataHead='{
@@ -66,11 +66,10 @@ export const place = () => ({
       longitude: "-1.91483",
       addressToday: "Buxton, Derbyshire SK17, UK",
       description: "Town in Derbyshire. Home to Mrs Gladwin",
-      numberLetters: 3,
+      numberLetters: 3
     };
   },
-  template:
-    `<EntityHeader 
+  template: `<EntityHeader 
       :type='type' 
       :title='title' 
       :metadataHead='{
