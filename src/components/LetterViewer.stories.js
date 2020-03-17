@@ -81,7 +81,7 @@ export const fullTranscript = () => ({
         letterImage3,
         letterImage4
       ],
-      transcriptComponent: "LetterTranscriptFull",
+      transcriptComponent: "LetterTranscriptFull"
     };
   },
   template:

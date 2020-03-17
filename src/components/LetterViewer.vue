@@ -3,19 +3,23 @@
     <div v-if="$mq !== 'l'" class="w-100 mb4">
       <agile
         ref="carousel"
-        :options="agileOptions" 
+        :options="agileOptions"
         @afterChange="currentIndex = $event.currentSlide"
         class="agile mh2 mh4-ns mb3"
       >
-        <div 
-          v-for="(slide, index) in manuscriptPageImages" :key="index" 
+        <div
+          v-for="(slide, index) in manuscriptPageImages"
+          :key="index"
           :class="`slide--${index}`"
           class="slide"
         >
           <img class="mw-100" :src="slide" />
         </div>
       </agile>
-      <div v-if="transcriptPageComponents || $mq !== 'l'" class="flex justify-center">
+      <div
+        v-if="transcriptPageComponents || $mq !== 'l'"
+        class="flex justify-center"
+      >
         <Pagination
           :currentIndex="indexForNonNerds"
           :totalPages="totalPages"
@@ -24,7 +28,7 @@
           :onClickFirst="handleClickFirst"
           :onClickLast="handleClickLast"
         />
-        </div>
+      </div>
     </div>
     <div class="w-100 flex justify-center">
       <div v-if="$mq === 'l'" class="mr2 letter-viewer__side">
@@ -38,7 +42,10 @@
             }"
           ></div>
         </div>
-        <div v-if="transcriptPageComponents || $mq === 'l'" class="flex justify-center mt4">
+        <div
+          v-if="transcriptPageComponents || $mq === 'l'"
+          class="flex justify-center mt4"
+        >
           <Pagination
             :currentIndex="indexForNonNerds"
             :totalPages="totalPages"
@@ -58,8 +65,8 @@
             v-if="transcriptPageComponents"
             v-bind:is="transcriptPageComponents[currentIndex]"
           ></component>
-          <div 
-            v-else-if="transcriptComponent" 
+          <div
+            v-else-if="transcriptComponent"
             v-bind:is="transcriptComponent"
           ></div>
           <div v-else>No transcript available</div>
@@ -73,8 +80,8 @@
 import Vue from "vue";
 import { VTooltip } from "v-tooltip";
 import Pagination from "./Pagination";
-import VueMq from 'vue-mq'
-import { VueAgile } from 'vue-agile'
+import VueMq from "vue-mq";
+import { VueAgile } from "vue-agile";
 
 import "../css/tooltips.css";
 
@@ -82,10 +89,10 @@ Vue.use(VueMq, {
   breakpoints: {
     s: 480,
     m: 960,
-    l: Infinity,
+    l: Infinity
   },
-  defaultBreakpoint: 's'
-})
+  defaultBreakpoint: "s"
+});
 
 Vue.directive("tooltip", VTooltip);
 VTooltip.options.defaultClass = "fitz-tooltip";
@@ -95,7 +102,7 @@ export default {
   props: {
     manuscriptPageImages: { type: Array },
     transcriptPageComponents: { type: Array },
-    transcriptComponent: { type: String },
+    transcriptComponent: { type: String }
   },
   components: {
     Pagination,
@@ -108,8 +115,8 @@ export default {
         dots: false,
         fade: true,
         navButtons: false,
-        infinite: false,
-      },
+        infinite: false
+      }
     };
   },
   computed: {
@@ -119,9 +126,7 @@ export default {
     totalPages: function() {
       return Math.max(
         this.manuscriptPageImages.length,
-        this.transcriptPageComponents 
-          ? this.transcriptPageComponents.length
-          : 0
+        this.transcriptPageComponents ? this.transcriptPageComponents.length : 0
       );
     }
   },
@@ -135,7 +140,7 @@ export default {
       }
       this.currentIndex = this.currentIndex - 1;
       if (this.$refs.carousel) {
-        this.$refs.carousel.goToPrev()
+        this.$refs.carousel.goToPrev();
       }
     },
     handleClickForward() {
@@ -144,22 +149,22 @@ export default {
       }
       this.currentIndex = this.currentIndex + 1;
       if (this.$refs.carousel) {
-        this.$refs.carousel.goToNext()
+        this.$refs.carousel.goToNext();
       }
     },
     handleClickFirst() {
       this.currentIndex = 0;
       if (this.$refs.carousel) {
-        this.$refs.carousel.goTo(0)
+        this.$refs.carousel.goTo(0);
       }
     },
     handleClickLast() {
       this.currentIndex = this.totalPages - 1;
       if (this.$refs.carousel) {
-        this.$refs.carousel.goTo(this.totalPages - 1)
+        this.$refs.carousel.goTo(this.totalPages - 1);
       }
     }
-  },
+  }
 };
 </script>
 

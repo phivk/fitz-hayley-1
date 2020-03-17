@@ -12,20 +12,19 @@ export const fromPathList = () => ({
         {
           text: "First",
           path: "/first"
-        }, 
+        },
         {
           text: "Second",
           path: "/first/second"
-        }, 
+        },
         {
           text: "Third",
           path: "/first/second/third"
         }
-      ],
-    }
+      ]
+    };
   },
-  template: 
-    `
+  template: `
     <div class="pa4">
       <TheBreadcrumbs 
         :pathList='pathList' 
@@ -37,10 +36,9 @@ export const fromPathList = () => ({
 export const fromWindowLocation = () => ({
   components: { TheBreadcrumbs },
   data: function() {
-    return {}
+    return {};
   },
-  template: 
-    `
+  template: `
     <div class="pa4">
       <TheBreadcrumbs/>
     </div>

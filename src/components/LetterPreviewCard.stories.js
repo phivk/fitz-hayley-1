@@ -50,7 +50,7 @@ export const withCustomLetterBg = () => ({
         events: 7
       },
       link: "/another-page",
-      letterBgSrc: imageLetter2,
+      letterBgSrc: imageLetter2
     };
   },
   template: `

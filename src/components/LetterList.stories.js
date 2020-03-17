@@ -8,7 +8,7 @@ export const regular = () => ({
   components: { LetterList },
   data: function() {
     return {
-      letters:[
+      letters: [
         {
           title: "William Hayley to Anna Seward: letter",
           date: "1782-06-11",
@@ -44,12 +44,11 @@ export const regular = () => ({
             events: 1
           },
           link: "#"
-        },
-      ],
+        }
+      ]
     };
   },
-  template:
-    `
+  template: `
     <div class="pa3">
       <LetterList 
         :letters='letters'

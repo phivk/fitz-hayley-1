@@ -3,25 +3,26 @@
     <div class="w-100 tr mb3">
       <DropdownSelector
         v-if="sortObjects"
-        :options='sortOrders'
+        :options="sortOrders"
         :label="'sorted'"
         v-on:index-change="onSortOrderIndexChange"
       />
       <DropdownSelector
         v-if="sortObjects"
-        :options='sortOptions'
+        :options="sortOptions"
         :label="'by'"
         v-on:index-change="onSortOptionIndexChange"
       />
     </div>
-    <LetterPreviewCard 
-      v-for="(letter, index) in lettersSorted" :key="index"
-      :title='letter.title'
-      :date='letter.date'
-      :author='letter.author'
-      :recipient='letter.recipient'
-      :entityCount='letter.entityCount'
-      :link='letter.link'
+    <LetterPreviewCard
+      v-for="(letter, index) in lettersSorted"
+      :key="index"
+      :title="letter.title"
+      :date="letter.date"
+      :author="letter.author"
+      :recipient="letter.recipient"
+      :entityCount="letter.entityCount"
+      :link="letter.link"
       class="mb3"
     />
   </section>
@@ -30,12 +31,12 @@
 <script>
 import LetterPreviewCard from "./LetterPreviewCard";
 import DropdownSelector from "./DropdownSelector";
-import { orderBy } from 'lodash';
+import { orderBy } from "lodash";
 export default {
   name: "LetterList",
   data: () => {
     return {
-      sortOrders: ['asc', 'desc'],
+      sortOrders: ["asc", "desc"],
       sortOrderIndex: 0,
       sortObjects: [
         {
@@ -53,37 +54,37 @@ export default {
         {
           name: "recipient",
           path: "recipient.name"
-        },
+        }
       ],
-      sortOptionIndex: 0,
-    }
+      sortOptionIndex: 0
+    };
   },
   components: {
     LetterPreviewCard,
-    DropdownSelector,
+    DropdownSelector
   },
   props: {
-    letters: { type: Array, default: () => [] },
+    letters: { type: Array, default: () => [] }
   },
   computed: {
-    lettersSorted () {
+    lettersSorted() {
       return orderBy(
-        this.letters, 
+        this.letters,
         [this.sortObjects[this.sortOptionIndex].path],
         [this.sortOrders[this.sortOrderIndex]]
-      )
+      );
     },
-    sortOptions () {
-      return this.sortObjects.map(sortObject => sortObject.name)
-    },
+    sortOptions() {
+      return this.sortObjects.map(sortObject => sortObject.name);
+    }
   },
   methods: {
-    onSortOrderIndexChange (newIndex) {
-      this.sortOrderIndex = newIndex
+    onSortOrderIndexChange(newIndex) {
+      this.sortOrderIndex = newIndex;
     },
-    onSortOptionIndexChange (newIndex) {
-      this.sortOptionIndex = newIndex
-    },
-  },
+    onSortOptionIndexChange(newIndex) {
+      this.sortOptionIndex = newIndex;
+    }
+  }
 };
 </script>

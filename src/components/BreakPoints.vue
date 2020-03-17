@@ -24,7 +24,9 @@
     <div class="fw1 fw9-ns ">not small (medium and up)</div>
 
     <h1 class="mt3">Vue MQ JS module</h1>
-    <span>current breakpoint: <span class="f2">{{$mq}}</span></span>
+    <span
+      >current breakpoint: <span class="f2">{{ $mq }}</span></span
+    >
     <h2 class="mt2">display</h2>
     <div v-show="true">all (small and up)</div>
     <div v-show="$mq === 's'">small only</div>
@@ -36,18 +38,18 @@
 
 <script>
 import Vue from "vue";
-import VueMq from 'vue-mq'
+import VueMq from "vue-mq";
 
 Vue.use(VueMq, {
   breakpoints: {
     s: 480,
     m: 960,
-    l: Infinity,
+    l: Infinity
   },
-  defaultBreakpoint: 's'
-})
+  defaultBreakpoint: "s"
+});
 
 export default {
-  name: "BreakPoints",
+  name: "BreakPoints"
 };
 </script>

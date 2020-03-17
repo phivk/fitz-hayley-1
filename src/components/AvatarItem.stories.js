@@ -13,12 +13,11 @@ export const personWithImage = () => ({
   },
   data: function() {
     return {
-      type: 'Person',
-      bgImageSrc: imageFlaxman,
+      type: "Person",
+      bgImageSrc: imageFlaxman
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
       :bgImageSrc='bgImageSrc'
@@ -32,12 +31,11 @@ export const personWithImageId = () => ({
   },
   data: function() {
     return {
-      type: 'Person',
-      backgroundId: 'blake',
+      type: "Person",
+      backgroundId: "blake"
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
       :backgroundId='backgroundId'
@@ -51,11 +49,10 @@ export const personWithoutImage = () => ({
   },
   data: function() {
     return {
-      type: 'Person',
+      type: "Person"
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
     />
@@ -68,12 +65,11 @@ export const placeWithImage = () => ({
   },
   data: function() {
     return {
-      type: 'Place',
-      bgImageSrc: imageSussex,
+      type: "Place",
+      bgImageSrc: imageSussex
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
       :bgImageSrc='bgImageSrc'
@@ -87,11 +83,10 @@ export const placeWithoutImage = () => ({
   },
   data: function() {
     return {
-      type: 'Place',
+      type: "Place"
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
     />
@@ -104,11 +99,10 @@ export const personSmall = () => ({
   },
   data: function() {
     return {
-      type: 'Person',
+      type: "Person"
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
       small
@@ -122,11 +116,10 @@ export const placeSmall = () => ({
   },
   data: function() {
     return {
-      type: 'Place',
+      type: "Place"
     };
   },
-  template:
-    `
+  template: `
     <AvatarItem 
       :type='type'
       small

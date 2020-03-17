@@ -6,8 +6,7 @@ export default { title: "ColourPalette" };
 
 export const regular = () => ({
   components: { ColourPalette },
-  template:
-    `
+  template: `
     <div class="pa3">
       <ColourPalette/>
     </div>

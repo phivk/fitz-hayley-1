@@ -1,5 +1,7 @@
 <template>
-  <div class="letter-preview-card bg-white w-100 sans-serif f5 shadow-4 flex  flex-column-reverse flex-row-l">
+  <div
+    class="letter-preview-card bg-white w-100 sans-serif f5 shadow-4 flex  flex-column-reverse flex-row-l"
+  >
     <div class="letter-preview-card__left-side pa3 w-40-l">
       <h2 class="f3 serif mb2">{{ title }}</h2>
       <h3 class="f4 mb2">{{ date }}</h3>
@@ -27,7 +29,7 @@
         >
       </div>
     </div>
-    <div 
+    <div
       class="letter-preview-card__right-side h4 h5-m h-auto-l"
       :style="{ backgroundImage: `url(${letterBgSrc})` }"
     >
@@ -53,7 +55,7 @@ export default {
     recipient: { type: Object },
     entityCount: { type: Object, default: () => ({}) },
     link: { type: String },
-    letterBgSrc: { type: String, default: imageLetterDefault },
+    letterBgSrc: { type: String, default: imageLetterDefault }
   }
 };
 </script>
