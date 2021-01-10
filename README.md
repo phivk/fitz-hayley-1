@@ -30,6 +30,17 @@ yarn build
 yarn lint
 ```
 
+## Builds for production and pushs to gh-pages branch for deployment
+
+```
+yarn deploy-storybook
+```
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Live Deployment of Component Library in StoryBook
+
+https://phivk.com/fitz-hayley/
+
