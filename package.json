@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@storybook/addon-essentials": "^6.1.14",
     "@storybook/storybook-deployer": "^2.8.7",
     "@storybook/vue": "^6.1.11",
     "@vue/cli-plugin-babel": "^4.5.10",
