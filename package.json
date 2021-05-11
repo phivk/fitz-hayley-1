@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "style-loader": "^2.0.0",
     "tachyons": "^4.12.0",
     "v-tooltip": "^2.1.2",
